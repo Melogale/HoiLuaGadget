@@ -1,0 +1,23 @@
+state={
+    id=306
+    name="STATE_1306"
+    manpower = 1144910
+    state_category = large_town
+    history = {
+		victory_points = {
+			10062 3
+		}
+
+        owner = EGL
+        buildings = {
+            infrastructure = 5
+            10062 = {
+                naval_base = 6
+            }
+        }
+        add_core_of = XIA
+    }
+    provinces = {
+        10062
+    }
+}

@@ -1,0 +1,34 @@
+
+state={
+ 	id=98
+ 	name="STATE_1098"
+ 	manpower = 2156910
+
+ 	state_category = large_city
+
+ 	history = {
+		victory_points = {
+			3960 10
+		}
+
+		victory_points = {
+			10337 10
+		}
+
+ 	owner = LOU
+ 		buildings = {
+ 			infrastructure = 6
+ 			industrial_complex = 3
+ 			dockyard = 1
+ 			arms_factory = 1
+ 			10337 = {
+ 				naval_base = 4
+ 			}
+ 		}
+ 		add_core_of = LOU
+ 	}
+
+ 	provinces = {
+ 		5085 2082 9920 3960 10778 10861 805 4577 12486 1500 7628 10337 10504 
+ 	}
+ }

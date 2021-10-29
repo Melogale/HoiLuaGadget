@@ -1,0 +1,17 @@
+state={
+    id=977
+    name="STATE_1977"
+    manpower = 9100
+    state_category = wasteland
+    impassable = yes
+    history = {
+        owner = EGY
+        buildings = {
+            infrastructure = 0
+        }
+        add_core_of = EGY
+    }
+    provinces = {
+        8103 10900
+    }
+}

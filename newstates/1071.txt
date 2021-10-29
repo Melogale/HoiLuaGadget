@@ -1,0 +1,34 @@
+
+state={
+ 	id=71
+ 	name="STATE_1071"
+ 	manpower = 3364890
+
+ 	state_category = megalopolis
+
+ 	history = {
+		victory_points = {
+			9832 1
+		}
+
+		victory_points = {
+			6732 20
+		}
+
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 9
+ 			industrial_complex = 1
+ 			dockyard = 4
+ 			arms_factory = 1
+ 			6732 = {
+ 				naval_base = 6
+ 			}
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		9832 11830 905 3906 6732 
+ 	}
+ }

@@ -1,0 +1,36 @@
+
+state={
+	id=657
+	name="STATE_1657"
+	manpower = 2431624
+	state_category = large_city
+	history={
+		victory_points = {
+			6300 1
+		}
+
+		victory_points = {
+			9392 10
+		}
+
+		owner = CNU
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+			dockyard = 1
+			arms_factory = 1
+			air_base = 3
+			6300 = {
+				naval_base = 5
+			}
+			9392 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = CNU
+	}
+
+	provinces={
+		159 6300 9314 9383 9392 11378 
+	}
+}

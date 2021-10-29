@@ -1,0 +1,26 @@
+
+state={
+	id=662
+	name="STATE_1662"
+	manpower = 945466
+	state_category = large_town
+	resources={
+		tungsten=4 # was: 6
+		aluminium=3 # was: 4
+	}
+	history={
+		owner = CNU
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 2
+			200 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = CNU
+	}
+
+	provinces={
+		200 3150 9161 11055 11136 11207 11306 
+	}
+}

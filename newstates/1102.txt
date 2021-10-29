@@ -1,0 +1,36 @@
+
+state={
+ 	id=102
+ 	name="STATE_1102"
+ 	manpower = 913100
+
+ 	state_category = large_town
+
+ 	history = {
+		victory_points = {
+			7834 1
+		}
+
+		victory_points = {
+			1806 1
+		}
+
+		victory_points = {
+			10370 1
+		}
+
+		victory_points = {
+			10717 10
+		}
+
+ 	owner = LOU
+ 		buildings = {
+ 			infrastructure = 4
+ 		}
+ 		add_core_of = LOU
+ 	}
+
+ 	provinces = {
+ 		4567 2043 1806 4811 7892 1352 7834 9802 10717 12361 1441 1564 10370 1534
+ 	}
+ }

@@ -1,0 +1,18 @@
+state={
+    id=1000
+    name="STATE_2000"
+	manpower = 16675
+	state_category = wasteland
+    history = {
+        owner = RUS
+        buildings = {
+			air_base = 0
+			infrastructure = 1
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        12385
+    }
+}

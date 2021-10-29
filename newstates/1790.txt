@@ -1,0 +1,17 @@
+state={
+    id=790
+    name="STATE_1790"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = CIN
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        7402 1321 7288 4327 1238 10130 1409 7265 7447 10274 12247 4416 1381 12275 7363
+    }
+}

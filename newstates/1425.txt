@@ -1,0 +1,18 @@
+state={
+    id=425
+    name="STATE_1425"
+    manpower = 1
+    state_category = town
+    history = {
+    owner = RUS
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+        add_core_of = RUS
+    }
+    provinces = {
+        198 12530 11047 6040 11098 11119 9205 11182 10723 105 7712 9121 6538 12558 4298 1295 9225 3155 10579 154 9230 3147 9099 6192 10207 6177 7898 12393
+    }
+}

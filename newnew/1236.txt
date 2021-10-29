@@ -1,0 +1,16 @@
+state={
+     id=236
+     name="STATE_1236"
+     manpower = 213620
+     state_category = town
+     history = {
+	     owner = GCO
+         buildings = {
+             infrastructure = 2
+         }
+         add_core_of = GCO
+     }
+     provinces = {
+         10849 5317 8050 10792 5026
+     }
+ }

@@ -1,0 +1,32 @@
+
+state={
+	id=655
+	name="STATE_1655"
+	manpower=6935490
+	state_category = metropolis
+	resources={
+		aluminium=2
+	}
+	history={
+		victory_points = {
+			3379 5
+		}
+
+		owner = CNU
+		buildings = {
+			infrastructure = 8
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 7
+			dockyard = 2
+			3379 = {
+				naval_base = 6
+			}
+		}
+		add_core_of = CNU
+	}
+
+	provinces={
+		276 385 3217 3242 3329 3379 11257 
+	}
+}

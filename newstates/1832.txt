@@ -1,0 +1,21 @@
+state={
+    id=832
+    name="STATE_1832"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			2086 15
+		}
+
+        owner = BHA
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        12868 2086 2002 2032 11955 5002 10021 5157 12708 10729
+    }
+}

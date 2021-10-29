@@ -1,0 +1,22 @@
+state={
+	id=152
+	name="STATE_1152"
+	manpower=4000000
+	
+	state_category = pastoral
+	history={
+		victory_points = {
+			7965 3
+		}
+
+		owner = XIA
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = XIA
+	}
+
+	provinces={
+		4559 4937 5009 7965 7976 8126 10413 10863 12789 12898 
+	}
+}

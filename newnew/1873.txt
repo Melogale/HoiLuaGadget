@@ -1,0 +1,18 @@
+state={
+    id=873
+    name="STATE_1873"
+	manpower = 503664
+	state_category = pastoral
+    history = {
+    owner = OTT
+        buildings = {
+			air_base = 0
+			infrastructure = 3
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        1923 8073  10748 2090 10786 5006
+    }
+}

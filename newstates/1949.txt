@@ -1,0 +1,26 @@
+state={
+    id=949
+    name="STATE_1949"
+    manpower = 894510
+    state_category = town
+    history = {
+		victory_points = {
+			4073 3
+		}
+
+		victory_points = {
+			12049 5
+		}
+
+        owner = OTT
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 1
+        }
+        add_core_of = EGY
+        add_core_of = OTT
+    }
+    provinces = {
+        12049 4073
+    }
+}

@@ -1,0 +1,27 @@
+state={
+	id=453 
+	name="STATE_1453" 
+
+	history={
+		victory_points = {
+			9833 25
+		}
+
+	owner = OTT
+		victory_points = {
+			1384 1
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = OTT
+	}
+
+	provinces={
+		9833
+	}
+	manpower=230000
+	
+	state_category=wasteland
+}

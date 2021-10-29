@@ -1,0 +1,16 @@
+state={
+    id=504
+    name="STATE_1504"
+    manpower = 30808
+    state_category = rural
+    history = {
+    owner = SCD
+        buildings = {
+            infrastructure = 4
+        }
+        controller = SCD
+    }
+    provinces = {
+        11130 11115 3055 3193 124 11125 6130 6208 6170 61 11060 151 6168 201 9147 6125 6165 9186 11073 9226 11208 11155 3095 6206 101 9083 6055 9178
+    }
+}

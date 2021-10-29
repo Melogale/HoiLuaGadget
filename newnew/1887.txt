@@ -1,0 +1,22 @@
+state={
+    id=887
+    name="STATE_1887"
+	manpower = 2489500
+	state_category = rural
+    history = {
+		victory_points = {
+			10840 3
+		}
+
+    owner = EGL
+        buildings = {
+			air_base = 0
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+        }
+    }
+    provinces = {
+        1920 4924 10840 1973 10752
+    }
+}

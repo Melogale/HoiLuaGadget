@@ -1,0 +1,30 @@
+state={
+    id=499
+    name="STATE_1499"
+    manpower = 321879
+    state_category = rural
+    resources={
+        steel = 16.8
+        chromium = 14.4
+    }
+    history = {
+		victory_points = {
+			3134 5
+		}
+
+    owner = SCD
+        buildings = {
+            infrastructure = 3
+            arms_factory = 1
+            industrial_complex = 1
+            air_base = 4
+            11183 = {
+                naval_base = 2
+            }
+        }
+        add_core_of = SCD
+    }
+    provinces = {
+        11140 9215 11196 6140 98 9165 9059 9179 9217 9115 11088 6194 3170 3012 116 3134 11117 9201 6181 178 11031 6157 11183
+    }
+}

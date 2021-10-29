@@ -1,0 +1,21 @@
+state={
+    id=861
+    name="STATE_1861"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			3916 3
+		}
+
+    owner = OTT
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        10811 5014 3916
+    }
+}

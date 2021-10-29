@@ -1,0 +1,17 @@
+state={
+    id=833
+    name="STATE_1833"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = EIN
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        10866 12718 12876 12041 7998 12844 4984 12886 10847
+    }
+}

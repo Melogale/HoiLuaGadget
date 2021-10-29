@@ -1,0 +1,18 @@
+state={
+ 	id=197
+ 	name="STATE_1197"
+ 	manpower = 2956120
+ 	state_category = rural
+ 	history = {
+        owner = MAN
+ 		buildings = {
+ 			infrastructure = 3
+ 			arms_factory = 1
+ 		}
+ 		add_core_of = MAN
+ 	}
+
+ 	provinces = {
+ 		12355 10503 12482 10376 3791 11906 6811 9928 11893 9766 783 3947 11862 3929 944 6964 11879 3944 6806 973 9897
+ 	}
+ }

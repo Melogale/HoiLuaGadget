@@ -1,0 +1,22 @@
+state={
+    id=806
+    name="STATE_1806"
+	manpower = 16430834
+	state_category = city
+    history = {
+		victory_points = {
+			4245 5
+		}
+
+        owner = BEN
+        buildings = {
+			air_base = 2
+			infrastructure = 5
+			arms_factory = 0
+			industrial_complex = 1
+        }
+    }
+    provinces = {
+        1656 7565 7475 7537 7593 4644 1609 10077 12050 1159 4245 4204 4062 7220
+    }
+}

@@ -1,0 +1,18 @@
+state={
+    id=813
+    name="STATE_1813"
+	manpower = 11163663
+	state_category = rural
+    history = {
+        owner = VND
+        buildings = {
+			air_base = 0
+			infrastructure = 5
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        4045 5040 7938 2005 5096 4410 10332
+    }
+}

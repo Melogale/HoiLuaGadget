@@ -1,0 +1,18 @@
+state={
+     id=1002
+     name="STATE_2002"
+     manpower = 1
+     state_category = town
+     history = {
+         owner = TRN
+         buildings = {
+             infrastructure = 1
+             arms_factory = 1
+             industrial_complex = 1
+         }
+     }
+     provinces = {
+         12805 8027 10417 4923
+		 
+     }
+ }

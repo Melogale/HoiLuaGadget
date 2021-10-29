@@ -1,0 +1,22 @@
+state={
+    id=750
+    name="STATE_1750"
+	manpower = 233450
+	state_category = wasteland
+    history = {
+		victory_points = {
+			7597 1
+		}
+
+        owner = TRN
+        buildings = {
+			air_base = 0
+			infrastructure = 1
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        12329 7597 7556 12397 10506 12340 4686 10148 10601 7777 10366 4636 4578 10353
+    }
+}

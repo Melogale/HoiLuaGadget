@@ -1,0 +1,26 @@
+
+state={
+ 	id=16
+ 	name="STATE_1016"
+ 	manpower = 51630
+
+ 	state_category = city
+
+ 	history = {
+		victory_points = {
+			3010 3
+		}
+
+ 		owner = NUN
+ 		buildings = {
+ 			infrastructure = 3
+ 			industrial_complex = 1
+ 			air_base = 2
+ 		}
+ 		add_core_of = NUN
+ 	}
+
+ 	provinces = {
+ 		1347 6754 3010 12166 7787 4765 3706
+ 	}
+ }

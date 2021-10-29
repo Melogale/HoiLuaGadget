@@ -1,0 +1,31 @@
+state={
+	id=766
+	name="STATE_1766"
+	manpower = 854300
+	resources={
+		steel=13 
+		chromium = 3 
+	}
+	
+	state_category = town
+	
+	history={
+		victory_points = {
+			6573 1
+		}
+
+	owner = SLO
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+		}
+		victory_points = {
+			6573 1 
+		}
+		add_core_of = SLO
+	}
+	
+	provinces={
+		3565 3716 6561 6573 9537 11679 
+	}
+}

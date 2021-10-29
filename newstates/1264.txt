@@ -1,0 +1,23 @@
+state={
+     id=264
+     name="STATE_1264"
+     manpower = 689820
+     state_category = town
+     history = {
+		victory_points = {
+			7371 1
+		}
+
+        owner = JEI
+        buildings = {
+            infrastructure = 3
+            12171 = {
+                naval_base = 3
+            }
+        }
+        add_core_of = JEI
+     }
+     provinces = {
+        7371 1335 12171 4338 12228 7358 10240 1306 10199 12186 10143 10212 4282
+     }
+ }

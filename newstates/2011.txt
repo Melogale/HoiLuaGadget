@@ -1,0 +1,17 @@
+state={
+    id=1011
+    name="STATE_2011"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = RUS
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        4874 11307 10216 12659 278 237 4758 7824
+    }
+}

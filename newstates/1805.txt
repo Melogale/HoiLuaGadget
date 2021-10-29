@@ -1,0 +1,21 @@
+state={
+    id=805
+    name="STATE_1805"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			11929 1
+		}
+
+        owner = BEN
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        9991 7179 12010 11968 9935 7078 11911 2843 10035 7124 4162 11929 4616 9993 7662 10443 10416 12423 13208
+    }
+}

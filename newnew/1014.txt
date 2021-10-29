@@ -1,0 +1,20 @@
+
+state={
+ 	id=14
+ 	name="STATE_1014"
+ 	manpower = 15510
+
+ 	state_category = rural
+
+ 	history = {
+ 		owner = NUN
+ 		buildings = {
+ 			infrastructure = 1
+ 		}
+ 		add_core_of = NUN
+ 	}
+
+ 	provinces = {
+ 		3606 7891 4678 10703 7830 7696 10527 8653 4272
+ 	}
+ }

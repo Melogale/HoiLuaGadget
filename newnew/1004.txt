@@ -1,0 +1,21 @@
+
+ state={
+ 	id=4
+ 	name="STATE_1004"
+ 	manpower = 175660
+
+ 	state_category = town
+
+ 	history = {
+ 		owner = QIQ
+ 		buildings = {
+ 			infrastructure = 2
+ 			industrial_complex = 1
+ 		}
+ 		add_core_of = QIQ
+ 	}
+
+ 	provinces = {
+ 		1651 12425 7667 4816 12399 7827 4736 4607 4521 10422 12134 4331 10159 766 11698 710 1601 1432 6876 6694 6699
+ 	}
+ }

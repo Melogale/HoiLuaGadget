@@ -1,0 +1,17 @@
+state={
+    id=822
+    name="STATE_1822"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = MKH
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        1129 12884 7316 8005 2041
+    }
+}

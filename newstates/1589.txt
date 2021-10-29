@@ -1,0 +1,20 @@
+state={
+    id=589
+    name="STATE_1589"
+    manpower = 210650
+    state_category = pastoral
+    history = {
+		victory_points = {
+			575 5
+		}
+
+    owner = BUR
+        buildings = {
+            infrastructure = 6
+        }
+        add_core_of = BUR
+    }
+    provinces = {
+        575
+    }
+}

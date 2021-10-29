@@ -1,0 +1,21 @@
+state={
+    id=588
+    name="STATE_1588"
+    manpower = 321320
+    state_category = town
+    history = {
+		victory_points = {
+			778 1
+		}
+
+    owner = SWI
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 1
+        }
+        add_core_of = SWI
+    }
+    provinces = {
+        9603 778 6609 11573
+    }
+}

@@ -1,0 +1,35 @@
+
+state={
+ 	id=21
+ 	name="STATE_1021"
+ 	manpower = 128890
+
+ 	state_category = rural
+
+ 	history = {
+		victory_points = {
+			12461 10
+		}
+
+		victory_points = {
+			1562 15
+		}
+
+ 	owner = DES
+ 		buildings = {
+ 			infrastructure = 3
+			dockyard = 1
+ 			12736 = {
+ 			naval_base = 2
+ 			}
+ 			7517 = {
+ 				naval_base = 3
+ 			}
+ 		}
+ 		add_core_of = DES
+ 	}
+
+ 	provinces = {
+ 		12303 4727 823 7517 1562 12374 7986 12461 1892 12859 7964 1904 8119 12736 13216 13215
+ 	}
+ }

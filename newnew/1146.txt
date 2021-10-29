@@ -1,0 +1,20 @@
+state={
+	id=146
+	name="STATE_1146"
+	manpower = 200000
+	state_category = rural
+	history={
+		owner = FRA
+		buildings = {
+			infrastructure = 3
+			11981 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = XIA
+	}
+	
+	provinces={
+		11981 
+	}
+}

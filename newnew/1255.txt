@@ -1,0 +1,17 @@
+state={
+     id=255
+     name="STATE_1255"
+     manpower = 91520
+     state_category = pastoral
+     history = {
+	     owner = AMZ
+         buildings = {
+             infrastructure = 2
+         }
+         add_core_of = AMZ
+         add_core_of = LOT
+     }
+     provinces = {
+         8240 10924 2160
+     }
+ }

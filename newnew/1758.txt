@@ -1,0 +1,35 @@
+state={
+    id=758
+    name="STATE_1758"
+	manpower = 2055552
+	state_category = city
+    history = {
+		victory_points = {
+			3988 1
+		}
+
+		victory_points = {
+			7127 3
+		}
+
+		victory_points = {
+			3973 3
+		}
+
+		victory_points = {
+			4109 20
+		}
+
+    owner = GRE
+        buildings = {
+			air_base = 4
+			infrastructure = 4
+			arms_factory = 0
+			industrial_complex = 3
+        }
+        add_core_of = GRE
+    }
+    provinces = {
+        863 3973 3864 976 1109 7127 3988 4109
+    }
+}

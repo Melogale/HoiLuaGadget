@@ -1,0 +1,22 @@
+state={
+ 	id=187
+ 	name="STATE_1187"
+ 	manpower = 8000000
+ 	state_category = town
+ 	history = {
+		victory_points = {
+			1319 10
+		}
+
+		owner = XIA
+ 		buildings = {
+ 			infrastructure = 3
+ 			industrial_complex = 1
+ 		}
+ 		add_core_of = XIA
+ 	}
+
+ 	provinces = {
+ 		1319 7606 7446 8023 12262 10776 1383 10346 1522 4501 1114 1196 1172 1653 12282 
+ 	}
+ }

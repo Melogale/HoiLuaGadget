@@ -1,0 +1,30 @@
+state={
+	id=452
+	name="STATE_1452"
+
+	history={
+		victory_points = {
+			1384 1
+		}
+
+		owner = TRN
+		victory_points = {
+			1384 1
+		}
+		buildings = {
+			air_base = 0
+			arms_factory = 0
+			industrial_complex = 0
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		1216 1384 1919 10187 12250 12430
+	}
+	manpower = 114996
+	
+	state_category = wasteland
+}

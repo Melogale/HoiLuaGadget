@@ -1,0 +1,27 @@
+
+state={
+ 	id=91
+ 	name="STATE_1091"
+ 	manpower = 1165940
+
+ 	state_category = town
+
+ 	history = {
+		victory_points = {
+			12304 1
+		}
+
+ 	owner = GTC
+ 		buildings = {
+ 			infrastructure = 4
+ 			12304 = {
+ 				naval_base = 3
+ 			}
+ 		}
+ 		add_core_of = GTC
+ 	}
+
+ 	provinces = {
+ 		12304 12477
+ 	}
+ }

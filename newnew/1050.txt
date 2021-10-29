@@ -1,0 +1,20 @@
+
+state={
+ 	id=50
+ 	name="STATE_1050"
+ 	manpower = 318930
+
+ 	state_category = rural
+
+ 	history = {
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 2
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		3911 983 7893 7807 10715 7683 490 6740 1657 12600 4666 10176 13196 3208 7364 12147 1712 3691 7813 4769 1785 13164 13162 13181 13186 13184 13166 13165
+ 	}
+ }

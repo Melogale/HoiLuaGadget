@@ -1,0 +1,29 @@
+state={
+	id=767
+	name="STATE_1767"
+	manpower = 566600
+	
+	state_category = rural
+	
+	history= {
+		victory_points = {
+			6727 1
+		}
+
+	owner = OTT
+		victory_points = {
+			6727 1
+		}
+		buildings = {
+			infrastructure = 4
+			dockyard = 1
+			6727 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = OTT
+	}
+	provinces=
+	{
+3701 3704 6727 6743	}
+}

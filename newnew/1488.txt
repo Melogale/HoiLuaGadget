@@ -1,0 +1,19 @@
+state={
+    id=488
+    name="STATE_1488"
+	manpower = 710272
+	state_category = city
+    history = {
+    owner = RUS
+        buildings = {
+			air_base = 0
+			infrastructure = 5
+			arms_factory = 0
+			industrial_complex = 0
+        }
+        add_core_of = RUS
+    }
+    provinces = {
+        11559 585 9744 765 6783
+    }
+}

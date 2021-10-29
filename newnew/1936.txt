@@ -1,0 +1,19 @@
+state={
+    id=936
+    name="STATE_1936"
+    manpower = 1084590
+    state_category = pastoral
+    history = {
+		victory_points = {
+			2081 1
+		}
+
+        owner = FRA
+        buildings = {
+            infrastructure = 1
+        }
+    }
+    provinces = {
+        7919 3181 1883 9152 2081 3123 4897 4978 1473 13211
+    }
+}

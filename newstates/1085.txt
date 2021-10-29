@@ -1,0 +1,24 @@
+
+state={
+ 	id=85
+ 	name="STATE_1085"
+ 	manpower = 795820
+
+ 	state_category = town
+
+ 	history = {
+ 	owner = BLC
+ 		buildings = {
+ 			infrastructure = 4
+ 			dockyard = 1
+ 			10520 = {
+ 				naval_base = 2
+ 			}
+ 		}
+ 		add_core_of = BLC
+ 	}
+
+ 	provinces = {
+ 		492 860 10520 11942 7640 10352 10380
+ 	}
+ }

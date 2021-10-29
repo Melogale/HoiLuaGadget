@@ -1,0 +1,20 @@
+
+state={
+ 	id=110
+ 	name="STATE_1110"
+ 	manpower = 623190
+
+ 	state_category = town
+
+ 	history = {
+ 	owner = LOU
+ 		buildings = {
+ 			infrastructure = 4
+ 		}
+ 		add_core_of = LOU
+ 	}
+
+ 	provinces = {
+ 		10606 3708 10676 4757 12513 1753 10532 12024
+ 	}
+ }

@@ -1,0 +1,21 @@
+state={
+     id=257
+     name="STATE_1257"
+     manpower = 1195500
+     state_category = town
+     history = {
+		victory_points = {
+			2152 5
+		}
+
+	     owner = LOT
+         buildings = {
+             infrastructure = 3
+             arms_factory = 1
+             industrial_complex = 1
+         }
+     }
+     provinces = {
+         5165 10973 2209 12922 2106 2173 2152 11023 5200 12951 8224 12901 2194 11007
+     }
+ }

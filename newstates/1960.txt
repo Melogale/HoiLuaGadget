@@ -1,0 +1,22 @@
+state={
+    id=960
+    name="STATE_1960"
+    manpower = 469120
+    state_category = town
+    history = {
+		victory_points = {
+			1149 10
+		}
+
+        owner = OTT
+        buildings = {
+            infrastructure = 4
+            1149 = {
+                naval_base = 4
+            }
+        }
+    }
+    provinces = {
+        1041 1118 9980 7066 7209 4194 1149 1189 12039
+    }
+}

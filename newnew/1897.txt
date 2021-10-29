@@ -1,0 +1,22 @@
+state={
+    id=897
+    name="STATE_1897"
+    manpower = 2523650
+    state_category = rural
+    history = {
+		victory_points = {
+			10929 1
+		}
+
+        owner = BUR
+        buildings = {
+            infrastructure = 3
+            2120 = {
+                naval_base = 3
+            }
+        }
+    }
+    provinces = {
+        4851 7842 12935 1874 10929 2120 2216 5155
+    }
+}

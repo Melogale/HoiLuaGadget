@@ -1,0 +1,27 @@
+state={
+	id=162
+	name="STATE_1162"
+	provinces={
+		1991 2014 2098 4900 5033 8121 12807 
+	}
+	manpower = 999999
+	
+	state_category = rural
+	history={
+		victory_points = {
+			5033 5
+		}
+
+ 		owner = TIB
+		buildings = {
+			air_base = 0
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		victory_points = {
+			5033 5 
+		}
+
+	}
+}

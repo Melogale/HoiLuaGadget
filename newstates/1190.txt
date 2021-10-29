@@ -1,0 +1,22 @@
+
+state={
+ 	id=190
+ 	name="STATE_1190"
+ 	manpower = 1
+
+ 	state_category = town
+
+ 	history = {
+ 	owner = MNG
+ 		buildings = {
+ 			infrastructure = 3
+ 			arms_factory = 1
+ 			industrial_complex = 1
+ 		}
+ 		add_core_of = MNG
+ 	}
+
+ 	provinces = {
+ 		1725 12541 4786 7864 1781 10560 4858 12614 10634 1855 10695 12544 7808 7870 1774 10563 4777 12520 10539 4751 7843 12695 7773 10669 
+ 	}
+ }

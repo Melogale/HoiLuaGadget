@@ -1,0 +1,22 @@
+state={
+    id=809
+    name="STATE_1809"
+	manpower = 3185020
+	state_category = town
+    history = {
+		victory_points = {
+			4987 3
+		}
+
+        owner = NEP
+        buildings = {
+			air_base = 0
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+        }
+    }
+    provinces = {
+        7374 4386 4987 5310
+    }
+}

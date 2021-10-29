@@ -1,0 +1,42 @@
+state={
+    id=942
+    name="STATE_1942"
+    manpower = 3265100
+    state_category = pastoral
+    history = {
+		victory_points = {
+			1909 1
+		}
+
+		victory_points = {
+			4989 1
+		}
+
+		victory_points = {
+			2038 1
+		}
+
+		victory_points = {
+			5034 1
+		}
+
+		victory_points = {
+			12891 1
+		}
+
+		victory_points = {
+			4948 5
+		}
+
+        owner = SCD
+        buildings = {
+            infrastructure = 1
+            4989 = {
+                naval_base = 2
+            }
+        }
+    }
+    provinces = {
+        2038 1909 12858 12802 12747 12891 12834 4989 7972 4948 5034 5077 8058 8015 2012 2100 12710 13213
+    }
+}

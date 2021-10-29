@@ -1,0 +1,17 @@
+state={
+    id=507
+    name="STATE_1507"
+    manpower = 200781
+    state_category = rural
+    history = {
+    owner = SCD
+        buildings = {
+            infrastructure = 5
+            air_base = 2
+        }
+        add_core_of = SCD
+    }
+    provinces = {
+        109 3100 9220 11201 6132 11067 9093 6200 3113 118 3173 182 6067 11185 9088 6063
+    }
+}

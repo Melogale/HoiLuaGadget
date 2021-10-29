@@ -1,0 +1,21 @@
+state={
+    id=799
+    name="STATE_1799"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			3456 3
+		}
+
+        owner = EIN
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        3456 10108 7049 10735
+    }
+}

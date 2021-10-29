@@ -1,0 +1,17 @@
+state={
+    id=1019
+    name="STATE_2019"
+    manpower = 1
+    state_category = town
+    history = {
+       owner = OTT
+       buildings = {
+           infrastructure = 1
+           arms_factory = 1
+           industrial_complex = 1
+        }
+    }
+    provinces = {
+        1636 7604 
+    }
+}

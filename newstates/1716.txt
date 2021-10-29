@@ -1,0 +1,20 @@
+state={
+    id=716
+    name="STATE_1716"
+    manpower = 401560
+    state_category = town
+    history = {
+		victory_points = {
+			9304 1
+		}
+
+    owner = BEL
+        buildings = {
+            infrastructure = 4
+        }
+        add_core_of = BEL
+    }
+    provinces = {
+        9236 9359 9304 11341
+    }
+}

@@ -1,0 +1,22 @@
+state={
+    id=810
+    name="STATE_1810"
+	manpower = 36574497
+	state_category = rural
+    history = {
+		victory_points = {
+			4516 1
+		}
+
+        owner = HIN
+        buildings = {
+			air_base = 0
+			infrastructure = 5
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        7334 4459 10878 1541 10751 10361 4516 1569 4571 4544 10471 1637 12452 12035 12307 10358 1444
+    }
+}

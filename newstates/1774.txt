@@ -1,0 +1,49 @@
+
+state={
+	id=774
+	name="STATE_1774"
+	manpower = 1081781
+	
+	state_category = town
+
+	history={
+		victory_points = {
+			6813 3
+		}
+
+		victory_points = {
+			7620 10
+		}
+
+		victory_points = {
+			9893 15
+		}
+
+	owner = OTT
+		victory_points = {
+			9893 15
+		}
+		victory_points = {
+			7620 10
+		}
+		victory_points = {
+			6813 3
+		}
+		victory_points = {
+			11746 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			11746 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = OTT
+	}
+
+	provinces={
+		806 3889 6813 7620 9893 9912 886 
+	}
+
+}

@@ -1,0 +1,20 @@
+state={
+	id=131
+	name="STATE_1131"
+	manpower = 4348400
+	state_category = city
+	history={
+		owner = XIA
+		buildings = {
+			infrastructure = 3
+			4137 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = XIA
+	}
+
+	provinces={
+		1134 4137 4140 6828 9969 12026 1137
+	}
+}

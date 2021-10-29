@@ -1,0 +1,17 @@
+state={
+     id=1025
+     name="STATE_2025"
+     manpower = 1
+     state_category = town
+     history = {
+         owner = TRN
+         buildings = {
+             infrastructure = 1
+             arms_factory = 1
+             industrial_complex = 1
+         }
+     }
+     provinces = {
+        1483
+     }
+ }

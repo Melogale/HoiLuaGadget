@@ -1,0 +1,26 @@
+state={
+    id=874
+    name="STATE_1874"
+	manpower = 1050460
+	state_category = pastoral
+    history = {
+		victory_points = {
+			12883 1
+		}
+
+		victory_points = {
+			11976 1
+		}
+
+    owner = OTT
+        buildings = {
+			air_base = 0
+			infrastructure = 2
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        1033 2027 2095 8092 10835 7934 12101 11976 5099 2033 4981 12883 5037 
+    }
+}

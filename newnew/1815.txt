@@ -1,0 +1,18 @@
+state={
+    id=815
+    name="STATE_1815"
+	manpower = 7528934
+	state_category = rural
+    history = {
+        owner = UTK
+        buildings = {
+			air_base = 0
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        1579 7090 11978 12490 10469 10001 10255 7372 12241 1622 10171 7465 7428 4237
+    }
+}

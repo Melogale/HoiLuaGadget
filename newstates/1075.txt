@@ -1,0 +1,21 @@
+
+state={
+ 	id=75
+ 	name="STATE_1075"
+ 	manpower = 861520
+
+ 	state_category = city
+
+ 	history = {
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 4
+ 			industrial_complex = 1
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		4531 12437 11621 11635 1655 720 12497 1527 4590 12365 10457 12697 4508 12305 7626 1604 7831 954 
+ 	}
+ }

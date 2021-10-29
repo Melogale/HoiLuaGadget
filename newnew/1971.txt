@@ -1,0 +1,16 @@
+state={
+    id=971
+    name="STATE_1971"
+    manpower = 186150
+    state_category = wasteland
+    impassable = yes
+    history = {
+        owner = FRA
+        buildings = {
+            infrastructure = 0
+        }
+    }
+    provinces = {
+        8088 1095 10731 12842 12711 2049 1901 5035 4903 8077 8061 1043 1958
+    }
+}

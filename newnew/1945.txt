@@ -1,0 +1,16 @@
+state={
+    id=945
+    name="STATE_1945"
+    manpower = 415210
+    state_category = rural
+    history = {
+        owner = EGY
+        buildings = {
+            infrastructure = 3
+        }
+        add_core_of = EGY
+    }
+    provinces = {
+        4138 8105 10745 12771 10844 1206
+    }
+}

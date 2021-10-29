@@ -1,0 +1,20 @@
+state={
+    id=532
+    name="STATE_1532"
+    manpower = 201394
+    state_category = rural
+    history = {
+		victory_points = {
+			3022 3
+		}
+
+    owner = SCD
+        buildings = {
+            infrastructure = 5
+        }
+        add_core_of = SCD
+    }
+    provinces = {
+        21 3096 3022 6118 9139 3183 111 11113 11206 9227
+    }
+}

@@ -1,0 +1,22 @@
+
+state={
+ 	id=15
+ 	name="STATE_1015"
+ 	manpower = 26230
+
+ 	state_category = town
+
+ 	history = {
+ 		owner = NUN
+ 		buildings = {
+ 			infrastructure = 1
+ 			arms_factory = 1
+ 			industrial_complex = 1
+ 		}
+ 		add_core_of = NUN
+ 	}
+
+ 	provinces = {
+ 		13075 2407 917 7858 7766 12534 1763 1411 13192 2976
+ 	}
+ }

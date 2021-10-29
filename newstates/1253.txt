@@ -1,0 +1,16 @@
+state={
+     id=253
+     name="STATE_1253"
+     manpower = 394120
+     state_category = rural
+     history = {
+	     owner = LOT
+         buildings = {
+             infrastructure = 2
+         }
+         add_core_of = LOT
+     }
+     provinces = {
+         12947 5204 2168 5151
+     }
+ }

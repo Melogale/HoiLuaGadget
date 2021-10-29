@@ -1,0 +1,18 @@
+state={
+    id=520
+    name="STATE_1520"
+    manpower = 978123
+    state_category = town
+    history = {
+    owner = SCD
+        buildings = {
+            infrastructure = 7
+            arms_factory = 1
+            dockyard = 1
+        }
+        add_core_of = SCD
+    }
+    provinces = {
+        6127 35 11163 9185 11188 11082 9109 13097 13098
+    }
+}

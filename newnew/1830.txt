@@ -1,0 +1,22 @@
+state={
+    id=830
+    name="STATE_1830"
+	manpower = 544285
+	state_category = rural
+    history = {
+		victory_points = {
+			5064 1
+		}
+
+        owner = PER
+        buildings = {
+			air_base = 0
+			infrastructure = 2
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        2101 4949 5020 5064 10789
+    }
+}

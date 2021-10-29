@@ -1,0 +1,25 @@
+state={
+     id=237
+     name="STATE_1237"
+     manpower = 231020
+     state_category = town
+     history = {
+		victory_points = {
+			10879 1
+		}
+
+	     owner = GCO
+         buildings = {
+             infrastructure = 3
+             industrial_complex = 1
+             dockyard = 1
+             10767 = {
+                naval_base = 4
+             }
+         }
+         add_core_of = GCO
+     }
+     provinces = {
+         1981 10767 10823 10912 10879
+     }
+ }

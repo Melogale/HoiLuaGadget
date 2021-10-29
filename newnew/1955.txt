@@ -1,0 +1,15 @@
+state={
+    id=955
+    name="STATE_1955"
+    manpower = 8890
+    state_category = wasteland
+    history = {
+        owner = OTT
+        buildings = {
+            infrastructure = 1
+        }
+    }
+    provinces = {
+        4060 7206 13078 12025 10049 4063 7139 1062 7063 4133 9977 1186 12079
+    }
+}

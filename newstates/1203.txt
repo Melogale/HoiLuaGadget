@@ -1,0 +1,17 @@
+state={
+ 	id=203
+ 	name="STATE_1203"
+ 	manpower = 3765120
+ 	state_category = pastoral
+ 	history = {
+        owner = MAN
+ 		buildings = {
+ 			infrastructure = 2
+ 		}
+ 		add_core_of = MAN
+ 	}
+
+ 	provinces = {
+ 		4809 10675 7873 7832 1847 12485 7894 4876 1502 4506 7582 1645 1588 12618 12548 7613 7897 4592 7526 1693 7767 4649 10698 1732 1545 10379 10368
+ 	}
+ }

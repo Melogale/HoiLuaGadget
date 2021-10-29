@@ -1,0 +1,18 @@
+state={
+    id=853
+    name="STATE_1853"
+	manpower = 222936
+	state_category = rural
+    history = {
+        owner = PER
+        buildings = {
+			air_base = 0
+			infrastructure = 3
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        12773 5050
+    }
+}

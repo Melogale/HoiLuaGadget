@@ -1,0 +1,21 @@
+
+state={
+ 	id=113
+ 	name="STATE_1113"
+ 	manpower = 439810
+
+ 	state_category = large_town
+
+ 	history = {
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 6
+ 			industrial_complex = 1
+ 			arms_factory = 1
+ 		}
+ 	}
+
+ 	provinces = {
+ 		6767 7896 1734
+ 	}
+ }

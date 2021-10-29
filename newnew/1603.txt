@@ -1,0 +1,30 @@
+
+state={
+	id=603
+	name="STATE_1603"
+	manpower = 5597704
+	state_category = metropolis
+
+	history={
+		victory_points = {
+			3780 15
+		}
+
+		owner = ITA
+		victory_points = {
+			3780 15 
+		}
+		buildings = {
+			infrastructure = 8
+			arms_factory = 7
+			industrial_complex = 3
+			air_base = 10
+
+		}
+		add_core_of = ITA
+	}
+
+	provinces={
+		607 773 969 3776 3780 6661 9584 11568 11587 11734 
+	}
+}

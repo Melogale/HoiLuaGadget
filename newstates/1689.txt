@@ -1,0 +1,28 @@
+state={
+	id=689
+	name="STATE_1689"
+
+	history={
+		victory_points = {
+			3393 3
+		}
+
+		victory_points = {
+			9304 1
+		}
+		owner = PLC
+		buildings = {
+			infrastructure = 5
+			air_base = 3
+
+		}
+		add_core_of = PLC
+	}
+
+	provinces={
+		3366 6359 6413 3393
+	}
+	manpower=757200
+	
+	state_category=rural
+}

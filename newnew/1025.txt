@@ -1,0 +1,21 @@
+
+state={
+ 	id=25
+ 	name="STATE_1025"
+ 	manpower = 827810
+
+ 	state_category = large_town
+
+ 	history = {
+ 	owner = DES
+ 		buildings = {
+ 			infrastructure = 4
+			industrial_complex = 1
+ 		}
+ 		add_core_of = DES
+ 	}
+
+ 	provinces = {
+ 		7973 2060 12811 2104 10746 10800 12897 12850
+ 	}
+ }

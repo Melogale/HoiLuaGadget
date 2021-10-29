@@ -1,0 +1,21 @@
+state={
+    id=812
+    name="STATE_1812"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			12137 1
+		}
+
+        owner = ARY
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        8082 1983 7064 8114 4299 9973 9951 1377 12777 12786 10794 5086 12137 5055
+    }
+}

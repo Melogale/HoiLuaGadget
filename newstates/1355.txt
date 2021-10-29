@@ -1,0 +1,19 @@
+state={
+    id=355
+    name="STATE_1355"
+    manpower = 38410
+    state_category = wasteland
+    history = {
+    owner = JRS
+        buildings = {
+            infrastructure = 1
+            13204 = {
+                naval_base = 1
+            }
+        }
+        add_core_of = JRS
+    }
+    provinces = {
+        13063 5264 4744 10540 13062 1819 4455 12592 13204
+    }
+}

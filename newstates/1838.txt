@@ -1,0 +1,17 @@
+state={
+    id=838
+    name="STATE_1838"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = DRA
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        1344 12180 10897 7310 10152 4414 12779 1430 10756 10296 4365 4321 7340 1228 7297
+    }
+}

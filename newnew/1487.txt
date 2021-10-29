@@ -1,0 +1,31 @@
+state={
+    id=487
+    name="STATE_1487"
+	manpower = 1116680
+	state_category = city
+    history = {
+		victory_points = {
+			3734 5
+		}
+
+		victory_points = {
+			719 3
+		}
+
+		victory_points = {
+			3720 1
+		}
+
+    owner = RUS
+        buildings = {
+			air_base = 0
+			infrastructure = 5
+			arms_factory = 0
+			industrial_complex = 1
+        }
+        add_core_of = RUS
+    }
+    provinces = {
+        6755 3734 3720 9696 750 11729 6741 3760 11668 719
+    }
+}

@@ -1,0 +1,22 @@
+state={
+    id=876
+    name="STATE_1876"
+	manpower = 149586
+	state_category = wasteland
+    history = {
+		victory_points = {
+			3942 1
+		}
+
+    owner = OTT
+        buildings = {
+			air_base = 0
+			infrastructure = 2
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        3942 7513 2013 12316 12442 10383
+    }
+}

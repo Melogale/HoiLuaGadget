@@ -1,0 +1,36 @@
+
+state={
+ 	id=6
+ 	name="STATE_1006"
+ 	manpower = 3723040
+
+ 	state_category = large_town
+
+ 	history = {
+		victory_points = {
+			9713 1
+		}
+
+ 		owner = QIQ
+ 		victory_points = {
+ 			6757 15
+ 		}
+ 		victory_points = {
+ 			11658 5
+ 		}
+ 		buildings = {
+ 			infrastructure = 6
+ 			dockyard = 3
+ 			air_base = 5
+ 			industrial_complex = 1
+ 			6757 = {
+ 				naval_base = 9
+ 			}
+ 		}
+ 		add_core_of = QIQ
+ 	}
+
+ 	provinces = {
+ 		6665 6482 3644 3588 781 610 9730 6772 768 9697 6757 6745 6681 677 11658 9713
+ 	}
+ }

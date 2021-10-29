@@ -1,0 +1,30 @@
+state={
+	id=445
+	name="STATE_1445"
+
+	history={
+		victory_points = {
+			1614 1
+		}
+
+		victory_points = {
+			1614 1
+		}
+		owner = TRN
+		buildings = {
+			air_base = 0
+			arms_factory = 0
+			industrial_complex = 0
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		1479 1532 1554 1576 1614 1623 4488 4499 4618 7501 7507 10395 10420 10435 10470 12161 12324 12465 12471 9605 
+	}
+	manpower = 790886
+	
+	state_category = rural
+}

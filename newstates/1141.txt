@@ -1,0 +1,21 @@
+
+state={
+	id=141
+	name="STATE_1141" # Dzungaria
+	manpower = 1
+
+	state_category = pastoral
+
+	history={
+		owner = UYG
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+
+	}
+
+	provinces={
+		1708 1783 1844 4714 4788 4823 4849 7693 7737 7866 10674 10691 12590 12737 
+	}
+}

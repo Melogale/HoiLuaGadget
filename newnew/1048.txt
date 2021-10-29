@@ -1,0 +1,22 @@
+
+state={
+ 	id=48
+ 	name="STATE_1048"
+ 	manpower = 2968510
+
+ 	state_category = city
+
+ 	history = {
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 5
+ 			industrial_complex = 3
+ 			arms_factory = 1
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		6827 12550 1719 3699 7776 10526 1760 4029 1849 7829 926 9657 4166 4738 4834 703 9678 10599 4854 709 751 5205 13159
+ 	}
+ }

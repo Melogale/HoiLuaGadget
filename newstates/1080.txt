@@ -1,0 +1,20 @@
+
+state={
+ 	id=80
+ 	name="STATE_1080"
+ 	manpower = 519120
+
+ 	state_category = town
+
+ 	history = {
+ 	owner = BLC
+ 		buildings = {
+ 			infrastructure = 3
+ 		}
+ 		add_core_of = BLC
+ 	}
+
+ 	provinces = {
+ 		913 7791 8014 7643 10495 10468 10439 1506 7466 4627 9779 7558
+ 	}
+ }

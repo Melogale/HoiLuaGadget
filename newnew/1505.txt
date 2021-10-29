@@ -1,0 +1,28 @@
+state={
+    id=505
+    name="STATE_1505"
+    manpower = 65675
+    state_category = rural
+    resources={
+        tungsten = 56
+        steel = 70
+        chromium = 35
+    }
+    history = {
+		victory_points = {
+			9108 1
+		}
+
+    owner = SCD
+        buildings = {
+            infrastructure = 4
+            9108 = {
+                naval_base = 1
+            }
+        }
+        add_core_of = SCD
+    }
+    provinces = {
+        9108 6083 9143 3104 6024 6161 3062 11190 148 3054 6074 3003 9211 13119 3179 11102 11112 11152 190 58 11058 9175
+    }
+}

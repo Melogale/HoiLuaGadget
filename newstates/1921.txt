@@ -1,0 +1,16 @@
+state={
+    id=921
+    name="STATE_1921"
+    manpower = 559150
+    state_category = rural
+    history = {
+        owner = FRA
+        buildings = {
+            infrastructure = 2
+        }
+        add_core_of = COG
+    }
+    provinces = {
+        7548 10025 12945 12896 4128
+    }
+}

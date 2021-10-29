@@ -1,0 +1,18 @@
+state={
+    id=954
+    name="STATE_1954"
+    manpower = 66800
+    state_category = town
+    history = {
+        owner = OTT
+        buildings = {
+            infrastructure = 4
+            10123 = {
+                naval_base = 5
+            }
+        }
+    }
+    provinces = {
+        10123
+    }
+}

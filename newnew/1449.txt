@@ -1,0 +1,25 @@
+state={
+	id=449
+	name="STATE_1449"
+
+	history={
+		owner = RUS
+		buildings = {
+			air_base = 0
+			arms_factory = 0
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			1668 1
+		}
+	}
+
+	provinces={
+		4651 7711 7795 7856 10550 10619 10680 12529 12662 13148 13149 13197
+	}
+	manpower = 338004
+	
+	state_category = pastoral
+}

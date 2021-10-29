@@ -1,0 +1,26 @@
+
+state={
+ 	id=58
+ 	name="STATE_1058"
+ 	manpower = 4823040
+
+ 	state_category = metropolis
+
+ 	history = {
+		victory_points = {
+			6710 20
+		}
+
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 7
+ 			industrial_complex = 6
+ 			arms_factory = 2
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		6710 9724 9746 11669 6769 9684 11685 3766 6782 11714 9747 11731 10303 10233 7420 13155 13200 13199
+ 	}
+ }

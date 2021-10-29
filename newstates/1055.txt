@@ -1,0 +1,33 @@
+
+state={
+ 	id=55
+ 	name="STATE_1055"
+ 	manpower = 2413040
+
+ 	state_category = city
+
+ 	history = {
+		victory_points = {
+			12149 3
+		}
+
+		victory_points = {
+			4345 20
+		}
+
+ 	owner = VIN
+ 		buildings = {
+ 			infrastructure = 5
+ 			dockyard = 2
+ 			industrial_complex = 3
+ 			12149 = {
+ 				naval_base = 7
+ 			}
+ 		}
+ 		add_core_of = VIN
+ 	}
+
+ 	provinces = {
+ 		12205 1764 12276 1341 10700 4345 9601 7291 12149 7435 4419 12223 1356 13160 7875 10249
+ 	}
+ }

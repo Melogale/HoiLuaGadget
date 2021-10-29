@@ -1,0 +1,23 @@
+state={
+    id=940
+    name="STATE_1940"
+    manpower = 4795350
+    state_category = pastoral
+    history = {
+		victory_points = {
+			2056 1
+		}
+
+		victory_points = {
+			10836 1
+		}
+
+        owner = SCD
+        buildings = {
+            infrastructure = 1
+        }
+    }
+    provinces = {
+        2001 10836 8071 8116 12851 7950 12707 1975 2056 7954 7930 5101 10788
+    }
+}

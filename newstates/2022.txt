@@ -1,0 +1,16 @@
+state={
+    id=1022
+    name="STATE_2022"
+    manpower = 100829
+    state_category = town
+    history = {
+    owner = OTT
+        buildings = {
+            infrastructure = 6
+        }
+        add_core_of = OTT
+    }
+    provinces = {
+        11580
+    }
+}

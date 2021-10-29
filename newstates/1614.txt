@@ -1,0 +1,23 @@
+state={
+    id=614
+    name="STATE_1614"
+    manpower = 1394820
+    state_category = large_city
+    history = {
+		victory_points = {
+			11666 30
+		}
+
+    owner = AUS
+        buildings = {
+            infrastructure = 8
+            arms_factory = 2
+            industrial_complex = 3
+            air_base = 3
+        }
+        add_core_of = AUS
+    }
+    provinces = {
+        6723 11651 6552 704 9527 11666 3700 6739 3718
+    }
+}

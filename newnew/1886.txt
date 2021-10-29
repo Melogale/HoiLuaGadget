@@ -1,0 +1,22 @@
+state={
+    id=886
+    name="STATE_1886"
+	manpower = 764142
+	state_category = pastoral
+    history = {
+		victory_points = {
+			5074 1
+		}
+
+    owner = EGL
+        buildings = {
+			air_base = 0
+			infrastructure = 3
+			arms_factory = 0
+			industrial_complex = 0
+        }
+    }
+    provinces = {
+        12894 13079 2029 4976 12821 5074
+    }
+}

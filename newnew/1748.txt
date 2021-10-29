@@ -1,0 +1,23 @@
+state={
+    id=748
+    name="STATE_1748"
+	manpower = 991420
+	state_category = city
+    history = {
+		victory_points = {
+			657 3
+		}
+
+    owner = OTT
+        buildings = {
+			air_base = 0
+			infrastructure = 6
+			arms_factory = 0
+			industrial_complex = 0
+        }
+        add_core_of = OTT
+    }
+    provinces = {
+        687 3076 9635 657
+    }
+}

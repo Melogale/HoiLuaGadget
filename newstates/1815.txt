@@ -1,0 +1,17 @@
+state={
+    id=815
+    name="STATE_1815"
+    manpower = 1
+    state_category = town
+    history = {
+        owner = UTK
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+    }
+    provinces = {
+        1579 7090 11978 12490 10469 10001 10255 7372 12241 1622 10171 7465 7428 4237
+    }
+}

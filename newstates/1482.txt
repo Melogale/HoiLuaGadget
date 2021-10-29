@@ -1,0 +1,26 @@
+state={
+    id=482
+    name="STATE_1482"
+    manpower = 1
+    state_category = town
+    history = {
+		victory_points = {
+			3653 3
+		}
+
+		victory_points = {
+			1599 5
+		}
+
+    owner = OTT
+        buildings = {
+            infrastructure = 1
+            arms_factory = 1
+            industrial_complex = 1
+        }
+        add_core_of = OTT
+    }
+    provinces = {
+        4605 6436 12309 4534 1599 1530 6671 9702 6669 9626 3658 654 3656 772 3653
+    }
+}
