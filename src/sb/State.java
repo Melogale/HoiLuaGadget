@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class State {
 
+    public ArrayList<String> cored;
+    public String owner;
+
     public String content;
     public int manpower;
 

@@ -171,7 +171,7 @@ public class Scripts {
 
 
     public static String readFile(String loc) {
-        return readFile(new File(loc));
+        return readFile(file(loc));
     }
 
     public static String readFile(File file) {
@@ -357,21 +357,14 @@ public class Scripts {
     }
 
     public static void replace(File file, String oldLine, String newLine) throws IOException {
-        //Instantiating the File class
-        //Instantiating the Scanner class to read the file
         Scanner sc = new Scanner(file);
-        //instantiating the StringBuffer class
         StringBuffer buffer = new StringBuffer();
-        //Reading lines of the file and appending them to StringBuffer
         while (sc.hasNextLine()) {
             buffer.append(sc.nextLine()+System.lineSeparator());
         }
         String fileContents = buffer.toString();
-        //closing the Scanner object
         sc.close();
-        //Replacing the old line with new line
         fileContents = fileContents.replaceAll(oldLine, newLine);
-        //instantiating the FileWriter class
         FileWriter writer = new FileWriter(file);
         writer.append(fileContents);
         writer.flush();
@@ -592,7 +585,6 @@ public class Scripts {
                     stringBuilder.append(line);
                     stringBuilder.append(ls);
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -604,7 +596,6 @@ public class Scripts {
             System.out.println(file.getName() + " yielded an IO exception.");
         }
         return coastal;
-
     }
 
     public static void populateStates(String stateDir) {
