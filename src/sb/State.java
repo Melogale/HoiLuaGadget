@@ -1,6 +1,7 @@
 package sb;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class State {
 
@@ -10,11 +11,20 @@ public class State {
     public File file;
     public int[] provinces;
 
+    public ArrayList<VP> vps;
+
     public int inf;
     public int civs;
     public int mils;
     public int dockyards;
     public int airfields;
+
+    public int steel;
+    public int aluminum;
+    public int rubber;
+    public int tungsten;
+    public int chromium;
+    public int oil;
 
     public String category;
 
@@ -31,12 +41,19 @@ public class State {
         this.airfields = Scripts.getAirfields(file);
         this.category = Scripts.getCategory(file);
 
+        this.vps = Scripts.getVPs(content);
+
+        this.steel = Scripts.getSteel(content);
+        this.aluminum = Scripts.getAluminum(content);
+        this.rubber = Scripts.getRubber(content);
+        this.tungsten = Scripts.getTungsten(content);
+        this.oil = Scripts.getOil(content);
+        this.chromium = Scripts.getChromium(content);
+
     }
 
     public State(String loc) {
         this(new File(loc));
     }
-
-
 
 }

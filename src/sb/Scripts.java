@@ -120,17 +120,13 @@ public class Scripts {
 
     }
 
-    public static String cleanList(String string) {
-        /*
-        while(string.contains("#")) {
-            String before = beforeWord(string, "#");
-            String after = afterWord(string, "#");
-            after = afterWord(after, "\n");
-            string = before + after;
+    public static String removeSpaces(String string) {
+        return string.replaceAll(" ", "").replaceAll("\t", "");
+    }
 
-        }
-         */
+    public static String cleanList(String string) {
         return string.replaceAll("\t", " ").trim().replaceAll("\\r\\n|\\r|\\n", " ").replaceAll(" +", " ");
+
     }
 
     public static int[] parseIntList(String string) {
@@ -282,7 +278,45 @@ public class Scripts {
         return vps;
     }
 
+    public static int getEqualsInt(String content, String left) {
+        String steel = getEqualsValue(content, left);
+        if(steel != "") {
+            return Integer.parseInt(steel);
+        }
+        return 0;
+    }
 
+    public static int getSteel(String content) {
+        return getEqualsInt(content, "steel");
+    }
+
+    public static int getOil(String content) {
+        return getEqualsInt(content, "oil");
+    }
+
+    public static int getChromium(String content) {
+        return getEqualsInt(content, "chromium");
+    }
+
+    public static int getAluminum(String content) {
+        return getEqualsInt(content, "aluminium");
+    }
+
+    public static int getTungsten(String content) {
+        return getEqualsInt(content, "tungsten");
+    }
+
+    public static int getRubber(String content) {
+        return getEqualsInt(content, "rubber");
+    }
+
+    public static String getEqualsValue(String content, String left) {
+        if(content.indexOf(left) != -1) {
+            String after = removeSpaces(beforeWord(afterWord(afterWord(content, "left"), "="), "\n"));
+            return after;
+        }
+        return "";
+    }
 
     public static ArrayList<Integer> newStatesWithVPs() {
         ArrayList<Integer> has = new ArrayList<Integer>();
@@ -539,11 +573,45 @@ public class Scripts {
         return recordHolder;
     }
 
+    public static ArrayList<Integer> coastalProvinces() {
+        File file = new File("definition.csv");
+        ArrayList<Integer> coastal = new ArrayList<Integer>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            try {
+                while((line = reader.readLine()) != null) {
+                    if(line.contains("#")) {
+                        line = beforeWord(line, "#");
+                    }
+                    if(line.contains("true")) {
+                        coastal.add(Integer.parseInt(beforeWord(line, ";")));
+                    }
+                    stringBuilder.append(line);
+                    stringBuilder.append(ls);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                reader.close();
+            }
+        } catch(FileNotFoundException f) {
+            System.out.println(file.getName() + " not found.");
+        } catch(IOException e) {
+            System.out.println(file.getName() + " yielded an IO exception.");
+        }
+        return coastal;
+
+    }
 
     public static void populateStates(String stateDir) {
         ArrayList<State> olds = loadOldStates();
 
         ArrayList<Integer> dothese = onePopNewStates();
+        ArrayList<Integer> coastal = coastalProvinces();
 
         ArrayList<Province> provinces = new ArrayList<Province>();
 
@@ -565,7 +633,9 @@ public class Scripts {
                     civs = cur.civs;
                     mils = cur.mils;
                     airfields = cur.airfields;
-                    dockyards = cur.airfields;;
+                }
+                if(coastal.contains(j)) {
+                    dockyards = cur.dockyards;
                 }
                 provinces.add(new Province(cur.provinces[j], mp / pc, inf, civs, mils, dockyards, airfields, category));
             }
@@ -667,81 +737,4 @@ public class Scripts {
 
 
 
-
-/*
-    public static void stratScript() throws IOException {
-        Scanner scanner = new Scanner(System.in);
-
-
-        String stateIDs;
-        while(true) {
-            System.out.println("Enter strat region ID:");
-            int stratID = scanner.nextInt();
-            File stratFile = findStratFile(stratID);
-            System.out.println("States of strategic region " + stratFile.getName() + ":");
-            scanner = new Scanner(System.in);
-            stateIDs = scanner.nextLine();
-            checkForDuplicates(stateIDs);
-            if(stateIDs.equals("-1")) {
-                System.out.println("Bye!");
-                break;
-            }
-            File newFile = new File("newregions/" + stratFile.getName());
-            newFile.createNewFile();
-            copyFileUsingStream(stratFile, newFile);
-            String oldProvinces = getProvinceList(newFile);
-            String newProvinces = statesToProvinces(stateIDs) + "\n\t\t# " + stateIDs;
-            replace(newFile, oldProvinces, newProvinces);
-        }
-    }
-
-    public static void supply() throws IOException {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Hello virgin! Type -1 at any time to close!\nStarting supply area ID:");
-        int id = scanner.nextInt();
-
-        int baseValue;
-        String stateIDs;
-
-        while(true) {
-            System.out.println("Base value of supply area " + id + ":");
-            baseValue = scanner.nextInt(); scanner.nextLine();
-            if(baseValue == -1) {
-                System.out.println("Bye!");
-                break;
-            }
-
-            System.out.println("States of supply area " + id + ":");
-            stateIDs = scanner.nextLine();
-            if(stateIDs.equals("-1")) {
-                System.out.println("Bye!");
-                break;
-            }
-
-            checkForDuplicates(stateIDs);
-
-            String fileName = id + "-SupplyArea.txt";
-            File supplyFile = new File(fileName);
-
-            if (supplyFile.createNewFile()) {
-                FileWriter fw = new FileWriter(fileName, true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write("supply_area={\n");
-                bw.write("\tid=" + id + "\n");
-                bw.write("\tname=\"SUPPLYAREA_" + id + "\"\n");
-                bw.write("\tvalue=" + baseValue + "\n");
-                bw.write("\tstates={" + "\n");
-                bw.write("\t\t" + stateIDs + "\n");
-                bw.write("\t}" + "\n");
-                bw.write("}");
-                bw.close();
-            } else {
-                System.out.println("I don't want to overwrite" + fileName + ". Bye!");
-                break;
-            }
-            id++;
-        }
-    }
-*/
 }

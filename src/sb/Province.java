@@ -13,9 +13,16 @@ public class Province {
     public int dockyards;
     public int airfields;
 
+    public int steel;
+    public int aluminum;
+    public int rubber;
+    public int tungsten;
+    public int chromium;
+    public int oil;
+
     public String category;
 
-    public Province(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category) {
+    public Province(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category, int steel, int aluminum, int rubber, int tungsten, int chromium, int oil) {
         this.id = id;
         this.pop = pop;
         this.inf = inf;
@@ -24,6 +31,17 @@ public class Province {
         this.dockyards = dockyards;
         this.airfields = airfields;
         this.category = category;
+        this.steel = steel;
+        this.aluminum = aluminum;
+        this.rubber = rubber;
+        this.tungsten = tungsten;
+        this.chromium = chromium;
+        this.oil = oil;
+    }
+
+    public Province(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category) {
+        this(id, pop, inf, civs, mils, dockyards, airfields, category, 0, 0, 0, 0, 0, 0);
+
     }
 
     public Province(int id, String stateName) {
