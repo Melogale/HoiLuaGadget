@@ -1,4 +1,4 @@
-package sb;
+package sg.obj;
 
 public class VP {
 

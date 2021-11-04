@@ -1,4 +1,6 @@
-package sb;
+package sg.obj;
+
+import sg.HubMain;
 
 import java.io.*;
 
@@ -10,8 +12,8 @@ public class StrategicRegion {
 
     public StrategicRegion(File file) {
         this.file = file;
-        this.content = Scripts.readFile(file);
-        this.provinces = Scripts.getProvinceList(content);
+        this.content = HubMain.readFile(file);
+        this.provinces = HubMain.getProvinceList(content);
 
     }
 }

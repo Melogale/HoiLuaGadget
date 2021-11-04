@@ -3,7 +3,7 @@ package sg;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Parsing {
+public class ParsingScripts {
 
     public static ArrayList<Integer> parseIntList(String string) {
         String[] tokens = string.split(" ");
@@ -76,5 +76,18 @@ public class Parsing {
      */
     public static String getBlock(String content, String label) {
         return beforeWord(afterWord(afterWord(content, label), "{"), "}");
+    }
+
+    /**
+     * Returns the whole of the first line that contains the given string.
+     */
+    public static String getLineWith(String content, String with) {
+        String[] lines = content.split("\n");
+        for(int i = 0; i < lines.length; i++) {
+            if(lines[i].contains(with)) {
+                return lines[i];
+            }
+        }
+        return "";
     }
 }

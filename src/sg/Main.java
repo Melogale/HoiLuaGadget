@@ -1,8 +1,6 @@
-package sb;
+package sg;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
 
@@ -10,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         //PatchScripts.printPaths(PatchScripts.keyWordFiles(PatchScripts.allTextFiles(new File(hoipath))));
-        System.out.println(Scripts.coastalProvinces());
+        System.out.println(HubMain.coastalProvinces());
     }
 
 
