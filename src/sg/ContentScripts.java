@@ -1,8 +1,11 @@
 package sg;
 
+import sg.obj.ProvinceBuildings;
 import sg.obj.VP;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class ContentScripts {
 
@@ -79,6 +82,50 @@ public class ContentScripts {
             vps.add(new VP(vp.get(0), vp.get(1)));
         }
         return vps;
+    }
+
+    public static ArrayList<ProvinceBuildings> getCoastBuildings(String content) {
+        String base = "naval_base";
+        String bunker = "coastal_bunker";
+        ArrayList<Integer> bases = ParsingScripts.findIndexesOf(content, base);
+        ArrayList<Integer> bunkers = ParsingScripts.findIndexesOf(content,  bunker);
+
+        HashMap<Integer, ProvinceBuildings> data = new HashMap<Integer, ProvinceBuildings>();
+
+        for(int i = 0; i < bases.size(); i++) {
+            String temp = content.substring(i == 0 ? 0 : bases.get(i - 1) + base.length(), bases.get(i) + base.length());
+            String label = ParsingScripts.findLabelWith(temp, base);
+            System.out.println("Temp: " + temp);
+            System.out.println("Label: " + label);
+            int province = Integer.parseInt(label.trim());
+            String onward = content.substring(bases.get(i));
+            if(data.containsKey(province)) {
+                data.get(province).bases += ParsingScripts.getValueInt(onward, base);
+            } else {
+                data.put(province, new ProvinceBuildings(province, ParsingScripts.getValueInt(onward, base), 0));
+            }
+        }
+
+        for(int i = 0; i < bunkers.size(); i++) {
+            String temp = content.substring(i == 0 ? 0 : bunkers.get(i - 1) + bunker.length(), bunkers.get(i) + bunker.length());
+            String label = ParsingScripts.findLabelWith(temp, bunker);
+            int province = Integer.parseInt(label.trim());
+            String onward = content.substring(bunkers.get(i));
+            if(data.containsKey(province)) {
+                data.get(province).bunkers += ParsingScripts.getValueInt(onward, bunker);
+            } else {
+                data.put(province, new ProvinceBuildings(province, 0, ParsingScripts.getValueInt(onward, bunker)));
+            }
+        }
+
+        ArrayList<ProvinceBuildings> list = new ArrayList<ProvinceBuildings>();
+        Collection<ProvinceBuildings> col = data.values();
+        for(ProvinceBuildings i : col) {
+            list.add(i);
+        }
+
+        return list;
+
     }
 
 }

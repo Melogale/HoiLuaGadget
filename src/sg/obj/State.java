@@ -1,6 +1,7 @@
 package sg.obj;
 
 import sg.ContentScripts;
+import sg.FileScripts;
 import sg.HubMain;
 
 import java.io.*;
@@ -36,7 +37,7 @@ public class State {
 
     public State(File file) {
         this.file = file;
-        this.content = HubMain.readFile(file);
+        this.content = FileScripts.readFile(file);
 
         this.provinces = ContentScripts.getProvinces(content);
         this.manpower = ContentScripts.getPop(content);

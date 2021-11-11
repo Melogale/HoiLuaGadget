@@ -15,7 +15,21 @@ state={
 			air_base = 1
 			3838 = {
 				naval_base = 3
+				coastal_bunker = 3
 			}
+			3839 = {
+				coastal_bunker = 3
+			}
+            3840 = {
+                naval_base = 3
+                coastal_bunker = 2
+            }
+            3842 = {
+                coastal_bunker = 2
+            }
+	        3842 = {
+                naval_base = 2
+            }
 		}
 		add_core_of = COR
 		add_core_of = FRA

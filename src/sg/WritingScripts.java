@@ -6,43 +6,45 @@ import java.io.PrintWriter;
 
 public class WritingScripts {
 
-    public static void writeLineUnder(File file, String label, String line) {
+    /**
+     * label = {
+     *     block
+     * }
+     *
+     * variable = value
+     */
+
+    public static void writeInLabel(File file, String label, String line) {
         String content = FileScripts.readFile(file);
-        String beforeHistory = ParsingScripts.beforeWord(content,label);
-        String afterHistory = ParsingScripts.afterWord(content,label);
-        String beforeOpening = ParsingScripts.beforeWord(afterHistory,"{");
-        String afterOpening = ParsingScripts.afterWord(afterHistory,"{");
+        String beforeLabel = ParsingScripts.beforeWord(content,label);
+        String afterLabel = ParsingScripts.afterWord(content,label);
+        String beforeOpening = ParsingScripts.beforeWord(afterLabel,"{");
+        String afterOpening = ParsingScripts.afterWord(afterLabel,"{");
         String add = "\n" + line;
-        String concat = beforeHistory + label + beforeOpening + "{" + add + afterOpening;
-        try {
-            PrintWriter writer = new PrintWriter(file);
-            writer.print(concat);
-            writer.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(file.getName() + " not found!");
-        }
+        String concat = beforeLabel + label + beforeOpening + "{" + add + afterOpening;
+        FileScripts.setFileContents(file, concat);
     }
 
-    public static void setValue(File file, String label, int value, int tabCount, String heading) {
-        setStringValue(file, label, Integer.toString(value), tabCount, heading);
+    public static void setValue(File file, String variable, int value, int tabCount, String heading) {
+        setValueString(file, variable, Integer.toString(value), tabCount, heading);
     }
 
-    public static void setStringValue(File file, String label, String value, int tabCount, String heading) {
+    public static void setValueString(File file, String variable, String value, int tabCount, String heading) {
         String content = FileScripts.readFile(file);
         String tabs = UtilScripts.tabs(tabCount);
-        if(content.contains(label)) {
-            String line = ParsingScripts.getLineWith(content, label);
+        if(content.contains(variable)) {
+            String line = ParsingScripts.getLineWith(content, variable);
             String before = ParsingScripts.beforeWord(content, line);
             String after = ParsingScripts.afterWord(content, line);
-            String replaced = before + tabs + label + " = " + value + after;
+            String replaced = before + tabs + variable + " = " + value + after;
             FileScripts.setFileContents(file, replaced);
         } else {
-            writeLineUnder(file, heading, tabs + label + " = " + value);
+            writeInLabel(file, heading, tabs + variable + " = " + value);
         }
     }
 
     public static void setCategory(File state, String value) {
-        setStringValue(state, "state_category", value, 1, "state");
+        setValueString(state, "state_category", value, 1, "state");
     }
     public static void setPop(File state, int value) {
         setValue(state, "manpower", value, 1, "state");
