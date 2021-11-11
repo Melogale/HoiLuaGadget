@@ -84,11 +84,13 @@ public class ContentScripts {
         return vps;
     }
 
-    public static ArrayList<ProvinceBuildings> getCoastBuildings(String content) {
+    public static ArrayList<ProvinceBuildings> getProvinceBuildings(String content) {
         String base = "naval_base";
         String bunker = "coastal_bunker";
+        String fort = "bunker";
         ArrayList<Integer> bases = ParsingScripts.findIndexesOf(content, base);
         ArrayList<Integer> bunkers = ParsingScripts.findIndexesOf(content,  bunker);
+        ArrayList<Integer> forts = ParsingScripts.findIndexesOf(content, fort);
 
         HashMap<Integer, ProvinceBuildings> data = new HashMap<Integer, ProvinceBuildings>();
 
@@ -102,7 +104,7 @@ public class ContentScripts {
             if(data.containsKey(province)) {
                 data.get(province).bases += ParsingScripts.getValueInt(onward, base);
             } else {
-                data.put(province, new ProvinceBuildings(province, ParsingScripts.getValueInt(onward, base), 0));
+                data.put(province, new ProvinceBuildings(province, ParsingScripts.getValueInt(onward, base), 0, 0));
             }
         }
 
@@ -114,7 +116,19 @@ public class ContentScripts {
             if(data.containsKey(province)) {
                 data.get(province).bunkers += ParsingScripts.getValueInt(onward, bunker);
             } else {
-                data.put(province, new ProvinceBuildings(province, 0, ParsingScripts.getValueInt(onward, bunker)));
+                data.put(province, new ProvinceBuildings(province, 0, ParsingScripts.getValueInt(onward, bunker), 0));
+            }
+        }
+
+        for(int i = 0; i < forts.size(); i++) {
+            String temp = content.substring(i == 0 ? 0 : forts.get(i - 1) + fort.length(), forts.get(i) + fort.length());
+            String label = ParsingScripts.findLabelWith(temp, fort);
+            int province = Integer.parseInt(label.trim());
+            String onward = content.substring(forts.get(i));
+            if(data.containsKey(province)) {
+                data.get(province).forts += ParsingScripts.getValueInt(onward, fort);
+            } else {
+                data.put(province, new ProvinceBuildings(province, 0, 0, ParsingScripts.getValueInt(onward, fort)));
             }
         }
 

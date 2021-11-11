@@ -187,9 +187,9 @@ public class HubMain {
         return undone;
     }
 
-    public static Province getProvinceFromID(ArrayList<Province> list, int id) {
+    public static ProvinceContent getProvinceFromID(ArrayList<ProvinceContent> list, int id) {
         for(int i = 0; i < list.size(); i++) {
-            Province c = list.get(i);
+            ProvinceContent c = list.get(i);
             if(c.id == id) {
                 return c;
             }
@@ -235,7 +235,7 @@ public class HubMain {
         ArrayList<Integer> dothese = onePopNewStates();
         ArrayList<Integer> coastal = coastalProvinces();
 
-        ArrayList<Province> provinces = new ArrayList<Province>();
+        ArrayList<ProvinceContent> provinces = new ArrayList<ProvinceContent>();
 
         for(int i = 0; i < olds.size(); i++) {
             State cur = olds.get(i);
@@ -259,7 +259,7 @@ public class HubMain {
                 if(coastal.contains(j)) {
                     dockyards = cur.dockyards;
                 }
-                provinces.add(new Province(cur.provinces.get(j), mp / pc, inf, civs, mils, dockyards, airfields, category));
+                provinces.add(new ProvinceContent(cur.provinces.get(j), mp / pc, inf, civs, mils, dockyards, airfields, category));
             }
         }
 
@@ -281,7 +281,7 @@ public class HubMain {
             int newID = Integer.parseInt(newName.substring(0, newName.length() - 4));
             if(dothese.contains(newID)) {
                 for(int j = 0; j < provs.size(); j++) {
-                    Province cprov = getProvinceFromID(provinces, provs.get(j));
+                    ProvinceContent cprov = getProvinceFromID(provinces, provs.get(j));
                     if(cprov == null) {
                         System.out.println("Province " + provs.get(j) + " in state " + curs.file.getName());
                     } else {
@@ -311,10 +311,26 @@ public class HubMain {
 
     }
 
+    /**
+     *  For each state in oldDirectory, splits up all the content of the states among its provinces.
+     *  In newDirectory, gets the provinces of the states, and adds up the content given to them from the old states.
+     *  In finalDirectory, places the final content-filled versions of the new states.
+     */
+    // CONTENT ALLOCATION VARIABLES
+    public static final ArrayList<Integer> coastalProvinces = coastalProvinces();
+
+    public static void provinicalRepopulation(String oldDirectory, String newDirectory, String finalDirectory) {
+        File[] oldFiles = FileScripts.getDirectoryFiles(oldDirectory);
+        File[] newFiles = FileScripts.getDirectoryFiles(newDirectory);
+
+
+
+    }
+
     public static void genLoc(String locFileName) throws IOException {
         ArrayList<State> olds = loadOldStates();
 
-        ArrayList<Province> provinces = new ArrayList<Province>();
+        ArrayList<ProvinceContent> provinces = new ArrayList<ProvinceContent>();
 
         ArrayList<String> names = readLoc();
 
@@ -327,7 +343,7 @@ public class HubMain {
         for(int i = 0; i < olds.size(); i++) {
             State cur = olds.get(i);
             for(int j = 0; j < cur.provinces.size(); j++) {
-                provinces.add(new Province(cur.provinces.get(j), names.get(i)));
+                provinces.add(new ProvinceContent(cur.provinces.get(j), names.get(i)));
             }
         }
 
@@ -343,7 +359,7 @@ public class HubMain {
             int newID = Integer.parseInt(newName.substring(0, newName.length() - 4));
 
             for(int j = 0; j < provs.size(); j++) {
-                Province cprov = getProvinceFromID(provinces, provs.get(j));
+                ProvinceContent cprov = getProvinceFromID(provinces, provs.get(j));
                 if(cprov == null) {
                     System.out.println("Province " + provs.get(j) + " in state " + curs.file.getName());
                 } else {

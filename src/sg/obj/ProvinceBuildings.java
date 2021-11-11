@@ -8,17 +8,19 @@ public class ProvinceBuildings {
     public int province;
     public int bases;
     public int bunkers;
+    public int forts;
 
-    public ProvinceBuildings(int province, int bases, int bunkers) {
+    public ProvinceBuildings(int province, int bases, int bunkers, int forts) {
         this.province = province;
         this.bases = bases;
         this.bunkers = bunkers;
+        this.forts = forts;
 
     }
 
     @Override
     public String toString() {
-        return province + ":\nbases: " + bases + "\nbunkers: " + bunkers + "\n";
+        return province + ":\nbases: " + bases + "\nbunkers: " + bunkers + "\nforts: " + forts + "\n";
     }
 
 }

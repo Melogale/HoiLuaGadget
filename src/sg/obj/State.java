@@ -19,6 +19,7 @@ public class State {
     public ArrayList<Integer> provinces;
 
     public ArrayList<VP> vps;
+    public ArrayList<ProvinceBuildings> pbuilds;
 
     public int inf;
     public int civs;
@@ -50,6 +51,7 @@ public class State {
         this.category = ContentScripts.getCategory(content);
 
         this.vps = ContentScripts.getVPs(content);
+        this.pbuilds = ContentScripts.getProvinceBuildings(content);
 
         this.steel = ContentScripts.getSteel(content);
         this.aluminum = ContentScripts.getAluminum(content);

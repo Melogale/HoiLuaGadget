@@ -1,11 +1,9 @@
 package sg.obj;
 
-public class Province {
+public class ProvinceContent {
 
     public int id;
     public int pop;
-
-    public String stateName;
 
     public int inf;
     public int civs;
@@ -21,8 +19,9 @@ public class Province {
     public int oil;
 
     public String category;
+    public String stateName;
 
-    public Province(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category, int steel, int aluminum, int rubber, int tungsten, int chromium, int oil) {
+    public ProvinceContent(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category, int steel, int aluminum, int rubber, int tungsten, int chromium, int oil) {
         this.id = id;
         this.pop = pop;
         this.inf = inf;
@@ -39,17 +38,17 @@ public class Province {
         this.oil = oil;
     }
 
-    public Province(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category) {
+    public ProvinceContent(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category) {
         this(id, pop, inf, civs, mils, dockyards, airfields, category, 0, 0, 0, 0, 0, 0);
 
     }
 
-    public Province(int id, String stateName) {
-        this(id, 0, 0, 0, 0, 0, 0, "town");
+    public ProvinceContent(int id, String stateName) {
+        this(id, 0, 0, 0, 0, 0, 0, null);
         this.stateName = stateName;
     }
 
-    public Province(int id, int pop) {
-        this(id, pop, 0, 0, 0, 0, 0, "town");
+    public ProvinceContent(int id, int pop) {
+        this(id, pop, 0, 0, 0, 0, 0, null);
     }
 }

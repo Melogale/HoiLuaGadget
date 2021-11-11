@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         //PatchScripts.printPaths(PatchScripts.keyWordFiles(PatchScripts.allTextFiles(new File(hoipath))));
-        System.out.println(ContentScripts.getCoastBuildings("\n" +
+        System.out.println(ContentScripts.getProvinceBuildings("\n" +
                 "state={\n" +
                 "\tid=1\n" +
                 "\tname=\"STATE_1\" # Corsica\n" +
