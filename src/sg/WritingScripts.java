@@ -1,5 +1,7 @@
 package sg;
 
+import sg.obj.State;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,6 +15,17 @@ public class WritingScripts {
      *
      * variable = value
      */
+
+    public static void writeStateContent(File file, int id, State state) {
+        String concat = "state={\n\tid = " + id + "\n\tname = \"STATE_" + id + "\"\n";
+        concat += "\tmanpower = " + state.manpower + "\n";
+        concat += "\tstate_category = " + state.category + "\n";
+        concat += "\thistory={\n";
+        concat += "\t\towner = " + state.owner + "\n";
+        for(String core : state.cored) {
+            concat +=
+        }
+    }
 
     public static void writeInLabel(File file, String label, String line) {
         String content = FileScripts.readFile(file);

@@ -6,12 +6,14 @@ public class ProvinceBuildings {
     // coastal_bunker
 
     public int province;
+
     public int bases;
     public int bunkers;
     public int forts;
 
     public ProvinceBuildings(int province, int bases, int bunkers, int forts) {
         this.province = province;
+
         this.bases = bases;
         this.bunkers = bunkers;
         this.forts = forts;
