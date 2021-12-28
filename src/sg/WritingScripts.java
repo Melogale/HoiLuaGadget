@@ -23,7 +23,7 @@ public class WritingScripts {
         concat += "\thistory={\n";
         concat += "\t\towner = " + state.owner + "\n";
         for(String core : state.cored) {
-            concat +=
+            //concat +=
         }
     }
 

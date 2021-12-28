@@ -27,10 +27,12 @@ public class ParsingScripts {
         String[] tokens = string.split(" ");
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < tokens.length; i++) {
-            if(!tokens[i].contains(".")) {
-                list.add(Integer.parseInt(tokens[i]));
-            } else {
-                list.add((int) Double.parseDouble(tokens[i]));
+            if(!tokens[i].equals("")) {
+                if (!tokens[i].contains(".")) {
+                    list.add(Integer.parseInt(tokens[i]));
+                } else {
+                    list.add((int) Double.parseDouble(tokens[i]));
+                }
             }
         }
         return list;
@@ -88,8 +90,12 @@ public class ParsingScripts {
      * value: string following equals
      */
     public static String getValue(String content, String variable) {
+        //System.out.println("CONTENT START:");
+        //System.out.println(content);
+        //System.out.println(":CONTENT END");
+        //System.out.println("VARIABLE: " + variable);
         if(content.contains(variable)) {
-            String after = removeSpaces(beforeWord(afterWord(afterWord(content, "left"), "="), "\n"));
+            String after = removeSpaces(beforeWord(afterWord(afterWord(content, variable), "="), "\n"));
             return after;
         }
         return "";
@@ -98,6 +104,7 @@ public class ParsingScripts {
     public static int getValueInt(String content, String variable) {
         String value = getValue(content, variable);
         if(value != "") {
+            //System.out.println("Value: " + value);
             return Integer.parseInt(value);
         }
         return 0;

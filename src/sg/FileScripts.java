@@ -45,7 +45,7 @@ public class FileScripts {
                         line = ParsingScripts.beforeWord(line, "#");
                     }
                     stringBuilder.append(line);
-                    stringBuilder.append(ls);
+                    stringBuilder.append("\n");
                 }
                 return stringBuilder.toString();
             } catch (IOException e) {
