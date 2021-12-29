@@ -5,6 +5,7 @@ import sg.obj.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Random;
 
 public class HubMain {
@@ -22,6 +23,94 @@ public class HubMain {
                 System.out.println("Warning! State ID " + parsed + " has been used multiple times!");
             } else {
                 statesSoFar.add(parsed);
+            }
+        }
+    }
+
+    public static void generateStrategicRegions(String baseStratPath, String newStates, String whereToPut) {
+        File strats[] = FileScripts.getDirectoryFiles(baseStratPath);
+        File states[] = FileScripts.getDirectoryFiles(newStates);
+
+        ArrayList<Integer> seaProvinces = seaProvinces();
+
+
+
+        Hashtable<Integer, Integer> provincestate = new Hashtable<Integer, Integer>();
+
+        // state, statehighestcount
+        Hashtable<Integer, Integer> stateMax = new Hashtable<Integer, Integer>();
+        // state id, strat id
+        Hashtable<Integer, Integer> stateStrat = new Hashtable<Integer, Integer>();
+
+        for(File state : states) {
+            //System.out.println(state.getName());
+            String content = FileScripts.readFile(state);
+            ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
+            int id = ContentScripts.getID(content);
+            for(int i : provinces) {
+                provincestate.put(i, id);
+            }
+            stateMax.put(id, 0);
+            stateStrat.put(id, -1);
+        }
+        /*
+        for(File strat : strats) {
+            System.out.println(strat.getName());
+            String content = FileScripts.readFile(strat);
+
+            if(content.contains("naval")) {
+
+            }
+
+        }
+        */
+        for(File strat : strats) {
+            System.out.println(strat.getName());
+            String content = FileScripts.readFile(strat);
+            if(!content.contains("naval")) {
+                Hashtable<Integer, Integer> stateprovinceCounter = new Hashtable<Integer, Integer>();
+                ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
+                int id = ContentScripts.getID(content);
+                for (int i : provinces) {
+                    int state = provincestate.get(i);
+                    int value = stateprovinceCounter.containsKey(state) ? stateprovinceCounter.get(state) + 1 : 1;
+                    stateprovinceCounter.put(state, value);
+                }
+                for (int state : stateprovinceCounter.keySet()) {
+                    int count = stateprovinceCounter.get(state);
+                    if (stateMax.get(state) < count) {
+                        stateStrat.put(state, id);
+                        stateMax.put(state, count);
+                    }
+                }
+            }
+        }
+        // strat id, states
+        Hashtable<Integer, ArrayList<Integer>> stratStates = new Hashtable<Integer, ArrayList<Integer>>();
+        for(int state : stateStrat.keySet()) {
+            int strat = stateStrat.get(state);
+
+            ArrayList<Integer> value = stratStates.containsKey(strat) ? new ArrayList<Integer>() : stratStates.get(strat);
+            stratStates.put(strat, value);
+            stratStates.get(strat).add(state);
+
+        }
+
+        for(int strat : stratStates.keySet()) {
+            System.out.print(strat + ": ");
+            System.out.print(stratStates.get(strat) + "\n");
+        }
+    }
+
+    public static void findEmptyStates(String directory) {
+        File files[] = FileScripts.getDirectoryFiles(directory);
+        for(File file : files) {
+            if(file.getName().endsWith(".txt")) {
+                String content = FileScripts.readFile(file);
+                ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
+                if(provinces.size() == 0) {
+                    System.out.println(file.getName());
+                }
             }
         }
     }
@@ -227,6 +316,38 @@ public class HubMain {
             System.out.println(file.getName() + " yielded an IO exception.");
         }
         return coastal;
+    }
+
+    public static ArrayList<Integer> seaProvinces() {
+        File file = new File("definition.csv");
+        ArrayList<Integer> sea = new ArrayList<Integer>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            try {
+                while((line = reader.readLine()) != null) {
+                    if(line.contains("#")) {
+                        line = ParsingScripts.beforeWord(line, "#");
+                    }
+                    if(line.contains("sea")) {
+                        sea.add(Integer.parseInt(ParsingScripts.beforeWord(line, ";")));
+                    }
+                    stringBuilder.append(line);
+                    stringBuilder.append(ls);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                reader.close();
+            }
+        } catch(FileNotFoundException f) {
+            System.out.println(file.getName() + " not found.");
+        } catch(IOException e) {
+            System.out.println(file.getName() + " yielded an IO exception.");
+        }
+        return sea;
     }
 
     public static void populateStates(String stateDir) {
