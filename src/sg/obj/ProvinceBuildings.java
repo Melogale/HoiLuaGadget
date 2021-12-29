@@ -1,6 +1,6 @@
 package sg.obj;
 
-public class ProvinceBuildings {
+public class ProvinceBuildings implements Comparable {
 
     // naval_base
     // coastal_bunker
@@ -25,4 +25,8 @@ public class ProvinceBuildings {
         return province + ":\nbases: " + bases + "\nbunkers: " + bunkers + "\nforts: " + forts + "\n";
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return this.province -((ProvinceBuildings)o).province;
+    }
 }

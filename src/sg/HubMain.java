@@ -368,6 +368,6 @@ public class HubMain {
             }
             string = string + " STATE_" + newID + ":" + UtilScripts.getMostCommonString(newNames) + "\n";
         }
-        FileScripts.setFileContents(newFile, string);
+        WritingScripts.setFileContents(newFile, string);
     }
 }

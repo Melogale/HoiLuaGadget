@@ -43,9 +43,10 @@ public class FileScripts {
                 while((line = reader.readLine()) != null) {
                     if(line.contains("#")) {
                         line = ParsingScripts.beforeWord(line, "#");
+                        line = line.replace("\r", "");
                     }
                     stringBuilder.append(line);
-                    stringBuilder.append(ls);
+                    stringBuilder.append("\n");
                 }
                 return stringBuilder.toString();
             } catch (IOException e) {
@@ -87,6 +88,7 @@ public class FileScripts {
     public static File clone(File orig, String newDirectory) {
         File newFile = new File(newDirectory + "/" + orig.getName());
         try {
+            newFile.getParentFile().mkdirs();
             newFile.createNewFile();
             copyFileUsingStream(orig, newFile);
         } catch (IOException e) {
@@ -112,17 +114,6 @@ public class FileScripts {
         writer.flush();
     }
 
-    /**
-     * Set the contents of a file.
-     */
-    public static void setFileContents(File file, String contents) {
-        try {
-            PrintWriter writer = new PrintWriter(file);
-            writer.print(contents);
-            writer.close();
-        } catch (FileNotFoundException f) {
-            System.out.println(file.getName() + " not found!");
-        }
-    }
+
 
 }

@@ -48,7 +48,6 @@ public class ContentScripts {
     public static int getPop(String content) {
         return ParsingScripts.getValueInt(content, "manpower");
     }
-
     public static int getInf(String content) {
         return ParsingScripts.getValueInt(content, "infrastructure");
     }
@@ -64,6 +63,26 @@ public class ContentScripts {
     public static int getDockyards(String content) {
         return ParsingScripts.getValueInt(content, "dockyard");
     }
+    public static int getRefineries(String content) {
+        return ParsingScripts.getValueInt(content, "synthetic_refinery");
+    }
+    public static int getReactors(String content) {
+        return ParsingScripts.getValueInt(content, "nuclear_reactor");
+    }
+    public static int getAntiairs(String content) {
+        return ParsingScripts.getValueInt(content, "anti_air_building");
+    }
+    public static int getSilos(String content) {
+        return ParsingScripts.getValueInt(content, "fuel_silo");
+    }
+    public static int getRadars(String content) {
+        return ParsingScripts.getValueInt(content, "radar_station");
+    }
+    public static int getRocketSites(String content) {
+        return ParsingScripts.getValueInt(content, "rocket_site");
+    }
+
+
     public static int getID(String content) {
         return ParsingScripts.getValueInt(content, "id");
     }
@@ -97,8 +116,6 @@ public class ContentScripts {
         for(int i = 0; i < bases.size(); i++) {
             String temp = content.substring(i == 0 ? 0 : bases.get(i - 1) + base.length(), bases.get(i) + base.length());
             String label = ParsingScripts.findLabelWith(temp, base);
-            System.out.println("Temp: " + temp);
-            System.out.println("Label: " + label);
             int province = Integer.parseInt(label.trim());
             String onward = content.substring(bases.get(i));
             if(data.containsKey(province)) {
