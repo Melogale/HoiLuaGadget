@@ -5,6 +5,7 @@ import sg.obj.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Random;
 
@@ -41,12 +42,13 @@ public class HubMain {
         Hashtable<Integer, Integer> stateMax = new Hashtable<Integer, Integer>();
         // state id, strat id
         Hashtable<Integer, Integer> stateStrat = new Hashtable<Integer, Integer>();
-
+        //int finalState = -1;
         for(File state : states) {
             //System.out.println(state.getName());
             String content = FileScripts.readFile(state);
             ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
             int id = ContentScripts.getID(content);
+            //finalState = id;
             for(int i : provinces) {
                 provincestate.put(i, id);
             }
@@ -59,46 +61,118 @@ public class HubMain {
             String content = FileScripts.readFile(strat);
 
             if(content.contains("naval")) {
-
+                ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
+                int id = finalState + ContentScripts.getID(content);
+                for(int i : provinces) {
+                    provincestate.put(i, finalState + )
+                }
             }
 
         }
         */
+        // FOR WATER PROVINCES THAT AREN'T IN STATES
+        Hashtable<Integer, ArrayList<Integer>> stratExtraProvinces = new Hashtable<Integer, ArrayList<Integer>>();
+        int highestStrat = 0;
         for(File strat : strats) {
-            System.out.println(strat.getName());
+
             String content = FileScripts.readFile(strat);
-            if(!content.contains("naval")) {
-                Hashtable<Integer, Integer> stateprovinceCounter = new Hashtable<Integer, Integer>();
-                ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
-                int id = ContentScripts.getID(content);
-                for (int i : provinces) {
+            Hashtable<Integer, Integer> stateprovinceCounter = new Hashtable<Integer, Integer>();
+            ArrayList<Integer> provinces = ContentScripts.getProvinces(content);
+            //if(Collections.disjoint(seaProvinces, provinces)) {
+            //System.out.println(strat.getName());
+            int id = ContentScripts.getID(content);
+            if(id > highestStrat) {
+                highestStrat = id;
+            }
+            for (int i : provinces) {
+                if(provincestate.containsKey(i)) {
                     int state = provincestate.get(i);
                     int value = stateprovinceCounter.containsKey(state) ? stateprovinceCounter.get(state) + 1 : 1;
                     stateprovinceCounter.put(state, value);
-                }
-                for (int state : stateprovinceCounter.keySet()) {
-                    int count = stateprovinceCounter.get(state);
-                    if (stateMax.get(state) < count) {
-                        stateStrat.put(state, id);
-                        stateMax.put(state, count);
-                    }
+                } else {
+                    ArrayList<Integer> extra = stratExtraProvinces.containsKey(id) ? stratExtraProvinces.get(id) : new ArrayList<Integer>();
+                    extra.add(i);
+                    stratExtraProvinces.put(id, extra);
                 }
             }
+            for (int state : stateprovinceCounter.keySet()) {
+                int count = stateprovinceCounter.get(state);
+                if (stateMax.get(state) < count) {
+                    stateStrat.put(state, id);
+                    stateMax.put(state, count);
+                }
+            }
+            //}
         }
+
+        System.out.println("\nDONE WITH STRATS\n");
         // strat id, states
         Hashtable<Integer, ArrayList<Integer>> stratStates = new Hashtable<Integer, ArrayList<Integer>>();
         for(int state : stateStrat.keySet()) {
             int strat = stateStrat.get(state);
-
-            ArrayList<Integer> value = stratStates.containsKey(strat) ? new ArrayList<Integer>() : stratStates.get(strat);
+            ArrayList<Integer> value = stratStates.containsKey(strat) ? stratStates.get(strat) : new ArrayList<Integer>();
+            value.add(state);
+            //System.out.println(stratStates);
+            //System.out.println(strat);
+            //System.out.println(value);
             stratStates.put(strat, value);
-            stratStates.get(strat).add(state);
+        }
+        /*
+        for(int i = -1; i < highestStrat; i++) {
+            System.out.print(i + ":");
+            if(stratStates.containsKey(i)) {
+                System.out.print(" " + stratStates.get(i));
+            }
+            if(stratExtraProvinces.containsKey(i)) {
+                System.out.print(" (WATER): " + stratExtraProvinces.get(i));
+            }
+            System.out.print("\n");
+        }
+        */
+        Hashtable<Integer, File> stateFiles = new Hashtable<Integer, File>();
+        for(File state : states) {
+            String content = FileScripts.readFile(state);
+            int id = ContentScripts.getID(content);
+
+            stateFiles.put(id, state);
 
         }
 
-        for(int strat : stratStates.keySet()) {
-            System.out.print(strat + ": ");
-            System.out.print(stratStates.get(strat) + "\n");
+        for(File strat: strats) {
+            String content = FileScripts.readFile(strat);
+
+            String  oldProvinces = ContentScripts.getProvincesString(content);
+            int id = ContentScripts.getID(content);
+
+            String newProvinces = "";
+            if(stratStates.containsKey(id)) {
+                ArrayList<Integer> np = stratStates.get(id);
+
+                for(int i : np) {
+                    newProvinces += "# State " + i + "\n\t\t";
+                    File state = stateFiles.get(i);
+
+                    ArrayList<Integer> stateProvinces = ContentScripts.getProvinces(FileScripts.readFile(state));
+                    for(int j = 0; j < stateProvinces.size(); j++) {
+                        int cp = stateProvinces.get(j);
+                        newProvinces += cp + (j == stateProvinces.size() - 1 ? "" : " ");
+                    }
+                    newProvinces += "\n\t\t";
+                }
+                newProvinces = newProvinces.substring(0, newProvinces.length() - 3);
+            }
+            if(stratExtraProvinces.containsKey(id)) {
+                ArrayList<Integer> extraProvinces = stratExtraProvinces.get(id);
+                newProvinces += "\n\t\t# Water Provinces\n\t\t";
+                for(int j = 0; j < extraProvinces.size(); j++) {
+                    int cp = extraProvinces.get(j);
+                    newProvinces += cp + (j == extraProvinces.size() - 1 ? "" : " ");
+                }
+            }
+            File newFile = FileScripts.createFile(whereToPut + "/" + id + ".txt");
+            WritingScripts.setFileContents(newFile, content);
+            FileScripts.replace(newFile, oldProvinces, newProvinces);
+
         }
     }
 
@@ -114,6 +188,7 @@ public class HubMain {
             }
         }
     }
+
 
     public static ArrayList<State> loadNewStates() {
         ArrayList<State> newstates = new ArrayList<State>();
@@ -149,65 +224,8 @@ public class HubMain {
         }
     }
 
-    public static ArrayList<VP> getAllVanillaVPs() {
-        ArrayList<VP> vps = new ArrayList<VP>();
-        for(int i = 1; i <= 806; i++) {
-            vps.addAll(ContentScripts.getVPs(FileScripts.readFile(FileScripts.findFileFromStart("states", i))));
-        }
-        return vps;
-    }
 
 
-
-    public static void allocateVPs(String outputDir) throws IOException {
-        ArrayList<VP> vps = getAllVanillaVPs();
-        ArrayList<Integer> done = newStatesWithVPs();
-        ArrayList<State> newstates = loadNewStates();
-
-        ArrayList<StatedVP> statedVPs = new ArrayList<StatedVP>();
-
-        for(int i = 0; i < vps.size(); i++) {
-            VP curVP = vps.get(i);
-
-            for(int j = 0; j < newstates.size(); j++) {
-                State curState = newstates.get(j);
-                boolean rightState = false;
-
-                for(int k = 0; k < curState.provinces.size(); k++) {
-                    int curProvince = curState.provinces.get(k);
-                    if(curProvince == curVP.province) {
-                        rightState = true;
-                    }
-                }
-
-                if(rightState) {
-                    statedVPs.add(new StatedVP(curVP, curState.file));
-                }
-
-            }
-
-        }
-
-        for(int i = 0; i < statedVPs.size(); i++) {
-            StatedVP curVP = statedVPs.get(i);
-            File newFile = new File(outputDir + "/" + curVP.newstate.getName());
-            if(!Files.exists(newFile.toPath())) {
-                newFile.createNewFile();
-                FileScripts.copyFileUsingStream(curVP.newstate, newFile);
-            }
-            String content = FileScripts.readFile(newFile);
-            String beforeHistory = ParsingScripts.beforeWord(content,"history");
-            String afterHistory = ParsingScripts.afterWord(content,"history");
-            String beforeOpening = ParsingScripts.beforeWord(afterHistory,"{");
-            String afterOpening = ParsingScripts.afterWord(afterHistory,"{");
-            String vp = "\n\t\tvictory_points = {\n\t\t\t" + curVP.province + " " + curVP.value + "\n\t\t}\n";
-            String concat = beforeHistory + "history" + beforeOpening + "{" + vp + afterOpening;
-            PrintWriter writer = new PrintWriter(newFile);
-            writer.print(concat);
-            writer.close();
-        }
-
-    }
 
     public static ArrayList<String> readLoc() {
         try {
@@ -287,7 +305,7 @@ public class HubMain {
     }
 
     public static ArrayList<Integer> coastalProvinces() {
-        File file = new File("definition.csv");
+        File file = new File(Paths.HOI_DEFINITIONS_CSV);
         ArrayList<Integer> coastal = new ArrayList<Integer>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -432,21 +450,7 @@ public class HubMain {
 
     }
 
-    /**
-     *  For each state in oldDirectory, splits up all the content of the states among its provinces.
-     *  In newDirectory, gets the provinces of the states, and adds up the content given to them from the old states.
-     *  In finalDirectory, places the final content-filled versions of the new states.
-     */
-    // CONTENT ALLOCATION VARIABLES
-    public static final ArrayList<Integer> coastalProvinces = coastalProvinces();
 
-    public static void provinicalRepopulation(String oldDirectory, String newDirectory, String finalDirectory) {
-        File[] oldFiles = FileScripts.getDirectoryFiles(oldDirectory);
-        File[] newFiles = FileScripts.getDirectoryFiles(newDirectory);
-
-
-
-    }
 
     public static void genLoc(String locFileName) throws IOException {
         ArrayList<State> olds = loadOldStates();

@@ -18,10 +18,12 @@ public class ProvinceContent {
     public int chromium;
     public int oil;
 
+    public int vpPoints;
+
     public String category;
     public String stateName;
 
-    public ProvinceContent(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category, int steel, int aluminum, int rubber, int tungsten, int chromium, int oil) {
+    public ProvinceContent(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category, int steel, int aluminum, int rubber, int tungsten, int chromium, int oil, int vpPoints) {
         this.id = id;
         this.pop = pop;
         this.inf = inf;
@@ -39,7 +41,7 @@ public class ProvinceContent {
     }
 
     public ProvinceContent(int id, int pop, int inf, int civs, int mils, int dockyards, int airfields, String category) {
-        this(id, pop, inf, civs, mils, dockyards, airfields, category, 0, 0, 0, 0, 0, 0);
+        this(id, pop, inf, civs, mils, dockyards, airfields, category, 0, 0, 0, 0, 0, 0, 0);
 
     }
 
@@ -51,4 +53,11 @@ public class ProvinceContent {
     public ProvinceContent(int id, int pop) {
         this(id, pop, 0, 0, 0, 0, 0, null);
     }
+
+    public ProvinceContent(int id) {
+        this(id, 0, 0, 0, 0, 0, 0, null);
+    }
+
+
+
 }

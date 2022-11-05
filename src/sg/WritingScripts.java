@@ -7,8 +7,7 @@ import sg.obj.VP;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class WritingScripts {
 
@@ -33,9 +32,9 @@ public class WritingScripts {
         }
     }
 
-    public static void writeStateContent(File file, int id, State state) {
-        String concat = "state = {\n\tid = " + id + "\n";
-        concat += "\tname = \"STATE_" + id + "\"\n";
+    public static void writeStateContent(File file, State state) {
+        String concat = "state = {\n\tid = " + state.id + "\n";
+        concat += "\tname = \"STATE_" + state.id + "\"\n";
         concat += "\tmanpower = " + state.manpower + "\n";
         concat += "\tstate_category = " + state.category + "\n";
         if(state.impassable) {
@@ -45,22 +44,22 @@ public class WritingScripts {
         if(state.steel > 0 || state.aluminum > 0 || state.rubber > 0 || state.tungsten > 0 || state.chromium > 0 || state.oil > 0) {
             concat += "\tresources = {\n";
             if(state.oil > 0) {
-                concat += "oil = " + state.oil + "\n";
+                concat += "\t\toil = " + state.oil + "\n";
             }
             if(state.aluminum > 0) {
-                concat += "aluminium = " + state.aluminum + "\n";
+                concat += "\t\taluminium = " + state.aluminum + "\n";
             }
             if(state.rubber > 0) {
-                concat += "rubber = " + state.rubber + "\n";
+                concat += "\t\trubber = " + state.rubber + "\n";
             }
             if(state.tungsten > 0) {
-                concat += "tungsten = " + state.tungsten + "\n";
+                concat += "\t\ttungsten = " + state.tungsten + "\n";
             }
             if(state.steel > 0) {
-                concat += "steel = " + state.steel + "\n";
+                concat += "\t\tsteel = " + state.steel + "\n";
             }
             if(state.chromium > 0) {
-                concat += "chromium = " + state.chromium + "\n";
+                concat += "\t\tchromium = " + state.chromium + "\n";
             }
         }
 
@@ -80,8 +79,12 @@ public class WritingScripts {
                 concat += "\t\tadd_core_of = " + core + "\n";
             }
         }
-        for(VP vp : state.vps) {
-            concat += "\t\t" +  "victory_points = { " + vp.province + " " + vp.value + " }\n";
+        HashMap<Integer, Integer> vps = state.vps;
+        Integer keys[] = new Integer[vps.size()];
+        keys = vps.keySet().toArray(keys);
+        Arrays.sort(keys);
+        for(int vp : keys) {
+            concat += "\t\t" +  "victory_points = { " + vp + " " + vps.get(vp) + " }\n";
         }
         concat += "\t\tbuildings = {\n";
         if(state.inf > 0) {

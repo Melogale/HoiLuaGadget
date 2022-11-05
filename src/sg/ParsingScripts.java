@@ -23,6 +23,19 @@ public class ParsingScripts {
         return indexes;
     }
 
+    public static ArrayList<Integer> findIndexesOfExceptWhenFollowing(String content, String word, String preceder) {
+        ArrayList<Integer> indexes = new ArrayList<Integer>();
+        int precederSize = preceder.length();
+        int index = content.indexOf(word);
+        while (index >= 0) {
+            if(!content.substring(index - precederSize, index).contains(preceder)) {
+                indexes.add(index);
+            }
+            index = content.indexOf(word, index + 1);
+        }
+        return indexes;
+    }
+
     public static ArrayList<Integer> parseIntList(String string) {
         String[] tokens = string.split(" ");
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -71,7 +84,7 @@ public class ParsingScripts {
      */
     public static String beforeWord(String content, String word) {
         int index = content.indexOf(word);
-        return content.substring(0, index == -1 ? 0 : index);
+        return content.substring(0, index == -1 ? content.length() : index);
     }
 
     /**
@@ -82,7 +95,7 @@ public class ParsingScripts {
         ArrayList<Integer> indexes = findIndexesOf(content, word);
         int index = indexes.size() != 0 ? indexes.get(indexes.size() - 1) : -1;
         // substring = [i, j)
-        return content.substring(0, index == -1 ? 0 : index);
+        return content.substring(0, index == -1 ? content.length() : index);
     }
     /**
      * Returns the value with the given label in content.
@@ -95,8 +108,8 @@ public class ParsingScripts {
         //System.out.println(":CONTENT END");
         //System.out.println("VARIABLE: " + variable);
         if(content.contains(variable)) {
-            String after = removeSpaces(beforeWord(afterWord(afterWord(content, variable), "="), "\n"));
-            return after;
+            String after = removeSpaces(beforeWord(afterWord(afterWord(content, variable), "="),"\n"));
+            return after.replace("}", "").replace("{","");
         }
         return "";
     }
@@ -105,6 +118,15 @@ public class ParsingScripts {
         String value = getValue(content, variable);
         if(value != "") {
             //System.out.println("Value: " + value);
+            try {
+                return Integer.parseInt(value);
+            } catch (NumberFormatException e) {
+                try {
+                    return (int) Float.parseFloat(value);
+                } catch (NumberFormatException f) {
+                    f.printStackTrace();
+                }
+            }
             return Integer.parseInt(value);
         }
         return 0;

@@ -25,6 +25,29 @@ public class FileScripts {
         return findFileFromStart(folder, Integer.toString(start));
     }
 
+    /**
+     * If a file already exists at loc, returns it.
+     * Otherwise, creates an empty file there and returns it.
+     */
+    public static File createFile(String loc) {
+        File file = new File(loc);
+        if(!file.getParentFile().isDirectory()) {
+            file.getParentFile().mkdirs();
+        }
+
+        if(file.isFile()) {
+            return file;
+        } else {
+            try {
+                file.createNewFile();
+            } catch (IOException io) {
+                System.out.println("Can't create file at " + loc);
+            }
+        }
+        return file;
+
+    }
+
     public static File getFile(String loc) {
         return new File(loc);
     }
@@ -33,20 +56,23 @@ public class FileScripts {
         return readFile(getFile(loc));
     }
 
+
+
     public static String readFile(File file) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = null;
             StringBuilder stringBuilder = new StringBuilder();
-            String ls = System.getProperty("line.separator");
             try {
                 while((line = reader.readLine()) != null) {
                     if(line.contains("#")) {
                         line = ParsingScripts.beforeWord(line, "#");
-                        line = line.replace("\r", "");
                     }
-                    stringBuilder.append(line);
-                    stringBuilder.append("\n");
+                    line = line.replace("\r", "");
+                    if(line != "") {
+                        stringBuilder.append(line);
+                        stringBuilder.append("\n");
+                    }
                 }
                 return stringBuilder.toString();
             } catch (IOException e) {
@@ -100,20 +126,22 @@ public class FileScripts {
     /**
      * Replace in a file one string with another.
      */
-    public static void replace(File file, String oldLine, String newLine) throws IOException {
-        Scanner sc = new Scanner(file);
-        StringBuffer buffer = new StringBuffer();
-        while (sc.hasNextLine()) {
-            buffer.append(sc.nextLine()+System.lineSeparator());
+    public static void replace(File file, String oldLine, String newLine) {
+        try {
+            Scanner sc = new Scanner(file);
+            StringBuffer buffer = new StringBuffer();
+            while (sc.hasNextLine()) {
+                buffer.append(sc.nextLine() + System.lineSeparator());
+            }
+            String fileContents = buffer.toString();
+            sc.close();
+            fileContents = fileContents.replaceAll(oldLine, newLine);
+            FileWriter writer = new FileWriter(file);
+            writer.append(fileContents);
+            writer.flush();
+        } catch (IOException e) {
+            System.out.println("Error replacing in file.");
         }
-        String fileContents = buffer.toString();
-        sc.close();
-        fileContents = fileContents.replaceAll(oldLine, newLine);
-        FileWriter writer = new FileWriter(file);
-        writer.append(fileContents);
-        writer.flush();
     }
-
-
 
 }

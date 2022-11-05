@@ -7,8 +7,11 @@ import sg.HubMain;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class State {
+
+    public int id;
 
     public ArrayList<String> cored;
     public String owner;
@@ -21,7 +24,7 @@ public class State {
     public File file;
     public ArrayList<Integer> provinces;
 
-    public ArrayList<VP> vps;
+    public HashMap<Integer, Integer> vps;
     public ArrayList<ProvinceBuildings> pbuilds;
 
     public int inf;
@@ -51,7 +54,7 @@ public class State {
     public State(File file) {
         this.file = file;
         this.content = FileScripts.readFile(file);
-
+        this.id = ContentScripts.getID(content);
         this.provinces = ContentScripts.getProvinces(content);
         Collections.sort(provinces);
         this.manpower = ContentScripts.getPop(content);
@@ -72,7 +75,6 @@ public class State {
         this.category = ContentScripts.getCategory(content);
 
         this.vps = ContentScripts.getVPs(content);
-        Collections.sort(vps);
         this.pbuilds = ContentScripts.getProvinceBuildings(content);
         Collections.sort(pbuilds);
 
@@ -86,7 +88,7 @@ public class State {
 
     }
 
-    public State(ArrayList<Integer> provinces, int manpower, int inf, int civs, int mils, int dockyards, int airfields, int refineries, int reactors, int antiairs, int silos, int radars, int rocketsites, String category, ArrayList<VP> vps, ArrayList<ProvinceBuildings> pbs, int oil, int aluminum, int rubber, int tungsten, int steel, int chromium, boolean impassable, ArrayList<String> cored, String owner) {
+    public State(ArrayList<Integer> provinces, int manpower, int inf, int civs, int mils, int dockyards, int airfields, int refineries, int reactors, int antiairs, int silos, int radars, int rocketsites, String category, HashMap<Integer, Integer> vps, ArrayList<ProvinceBuildings> pbs, int oil, int aluminum, int rubber, int tungsten, int steel, int chromium, boolean impassable, ArrayList<String> cored, String owner) {
         this.provinces = provinces;
         Collections.sort(provinces);
         this.manpower = manpower;
@@ -107,7 +109,6 @@ public class State {
         this.category = category;
 
         this.vps = vps;
-        Collections.sort(vps);
         this.pbuilds = pbs;
         Collections.sort(pbuilds);
 
@@ -124,5 +125,6 @@ public class State {
     public State(String loc) {
         this(new File(loc));
     }
+
 
 }
