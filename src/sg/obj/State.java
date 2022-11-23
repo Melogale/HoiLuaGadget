@@ -8,12 +8,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class State {
 
     public int id;
 
-    public ArrayList<String> cored;
+    public List<String> cored;
     public String owner;
 
     public String content;
@@ -47,6 +48,8 @@ public class State {
     public int tungsten;
     public int steel;
     public int chromium;
+
+    public int supplies;
 
 
     public String category;
@@ -86,9 +89,14 @@ public class State {
         this.chromium = ContentScripts.getChromium(content);
         this.impassable = content.contains("impassable");
 
+        this.supplies = ContentScripts.getSupplies(content);
+
+        this.cored = ContentScripts.getCored(content);
+        this.owner = ContentScripts.getOwner(content);
+
     }
 
-    public State(ArrayList<Integer> provinces, int manpower, int inf, int civs, int mils, int dockyards, int airfields, int refineries, int reactors, int antiairs, int silos, int radars, int rocketsites, String category, HashMap<Integer, Integer> vps, ArrayList<ProvinceBuildings> pbs, int oil, int aluminum, int rubber, int tungsten, int steel, int chromium, boolean impassable, ArrayList<String> cored, String owner) {
+    public State(ArrayList<Integer> provinces, int manpower, int inf, int civs, int mils, int dockyards, int airfields, int refineries, int reactors, int antiairs, int silos, int radars, int rocketsites, String category, HashMap<Integer, Integer> vps, ArrayList<ProvinceBuildings> pbs, int oil, int aluminum, int rubber, int tungsten, int steel, int chromium, boolean impassable, List<String> cored, String owner, int supplies) {
         this.provinces = provinces;
         Collections.sort(provinces);
         this.manpower = manpower;
@@ -120,6 +128,10 @@ public class State {
         this.chromium = chromium;
 
         this.impassable = impassable;
+
+        this.supplies = supplies;
+        this.owner = owner;
+        this.cored = cored;
     }
 
     public State(String loc) {

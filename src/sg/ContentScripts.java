@@ -6,6 +6,7 @@ import sg.obj.VP;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class ContentScripts {
 
@@ -17,6 +18,17 @@ public class ContentScripts {
         return ParsingScripts.parseIntList(getProvincesString(content));
     }
 
+    public static List<String> getCored(String content) {
+        return ParsingScripts.getValues(content, "add_core_of");
+    }
+
+    public static String getOwner(String content) {
+        return ParsingScripts.getValue(content, "owner");
+    }
+
+    public static int getSupplies(String content) {
+        return ParsingScripts.getValueInt(content, "local_supplies");
+    }
 
     public static int getSteel(String content) {
         return ParsingScripts.getValueInt(content, "steel");
@@ -151,5 +163,6 @@ public class ContentScripts {
         return list;
 
     }
+
 
 }

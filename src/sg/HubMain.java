@@ -337,7 +337,7 @@ public class HubMain {
     }
 
     public static ArrayList<Integer> seaProvinces() {
-        File file = new File("definition.csv");
+        File file = new File(Paths.HOI_DEFINITIONS_CSV);
         ArrayList<Integer> sea = new ArrayList<Integer>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));

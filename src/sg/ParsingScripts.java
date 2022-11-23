@@ -2,6 +2,7 @@ package sg;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ParsingScripts {
 
@@ -22,6 +23,7 @@ public class ParsingScripts {
         }
         return indexes;
     }
+
 
     public static ArrayList<Integer> findIndexesOfExceptWhenFollowing(String content, String word, String preceder) {
         ArrayList<Integer> indexes = new ArrayList<Integer>();
@@ -112,6 +114,18 @@ public class ParsingScripts {
             return after.replace("}", "").replace("{","");
         }
         return "";
+    }
+
+    public static List<String> getValues(String content, String variable) {
+        List<Integer> indexes = findIndexesOf(content, variable);
+        List<String> values = new ArrayList<>();
+        String cutContent;
+        for(int index : indexes) {
+            cutContent = content.substring(index);
+            values.add(getValue(cutContent, variable));
+        }
+        return values;
+
     }
 
     public static int getValueInt(String content, String variable) {

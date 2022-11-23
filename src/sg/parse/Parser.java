@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Parser {
-
+/*
     public static String cleanFile(File file) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -54,7 +54,7 @@ public class Parser {
            if(i == ' ') {
                splitUp.add(current);
                current = "";
-           }666
+           }
        }
 
        for(String thing : splitUp) {
@@ -62,4 +62,6 @@ public class Parser {
        }
 
     }
+    */
+
 }

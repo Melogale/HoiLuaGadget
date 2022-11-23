@@ -25,11 +25,11 @@ public class Block extends Element {
     }
 
     public String asList() {
-        String all = "";
+        StringBuilder all = new StringBuilder();
         for(Element item : list) {
-            all += item.toString() + "\n";
+            all.append(item.toString()).append("\n");
         }
-        return all;
+        return all.toString();
     }
 
     @Override

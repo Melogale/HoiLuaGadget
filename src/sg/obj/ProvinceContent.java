@@ -20,6 +20,10 @@ public class ProvinceContent {
 
     public int vpPoints;
 
+    public int supplies;
+
+    public int dockbases;
+
     public String category;
     public String stateName;
 

@@ -33,40 +33,41 @@ public class WritingScripts {
     }
 
     public static void writeStateContent(File file, State state) {
-        String concat = "state = {\n\tid = " + state.id + "\n";
-        concat += "\tname = \"STATE_" + state.id + "\"\n";
-        concat += "\tmanpower = " + state.manpower + "\n";
-        concat += "\tstate_category = " + state.category + "\n";
+        StringBuilder concat = new StringBuilder("state = {\n\tid = " + state.id + "\n");
+        concat.append("\tname = \"STATE_").append(state.id).append("\"\n");
+        concat.append("\tmanpower = ").append(state.manpower).append("\n");
+        concat.append("\tstate_category = ").append(state.category).append("\n");
         if(state.impassable) {
-            concat += "\timpassable = yes\n";
+            concat.append("\timpassable = yes\n");
         }
 
         if(state.steel > 0 || state.aluminum > 0 || state.rubber > 0 || state.tungsten > 0 || state.chromium > 0 || state.oil > 0) {
-            concat += "\tresources = {\n";
+            concat.append("\tresources = {\n");
             if(state.oil > 0) {
-                concat += "\t\toil = " + state.oil + "\n";
+                concat.append("\t\toil = ").append(state.oil).append("\n");
             }
             if(state.aluminum > 0) {
-                concat += "\t\taluminium = " + state.aluminum + "\n";
+                concat.append("\t\taluminium = ").append(state.aluminum).append("\n");
             }
             if(state.rubber > 0) {
-                concat += "\t\trubber = " + state.rubber + "\n";
+                concat.append("\t\trubber = ").append(state.rubber).append("\n");
             }
             if(state.tungsten > 0) {
-                concat += "\t\ttungsten = " + state.tungsten + "\n";
+                concat.append("\t\ttungsten = ").append(state.tungsten).append("\n");
             }
             if(state.steel > 0) {
-                concat += "\t\tsteel = " + state.steel + "\n";
+                concat.append("\t\tsteel = ").append(state.steel).append("\n");
             }
             if(state.chromium > 0) {
-                concat += "\t\tchromium = " + state.chromium + "\n";
+                concat.append("\t\tchromium = ").append(state.chromium).append("\n");
             }
+            concat.append("\t}\n");
         }
 
-        concat += "\thistory = {\n";
-        concat += "\t\towner = " + state.owner + "\n";
+        concat.append("\thistory = {\n");
+        concat.append("\t\towner = ").append(state.owner).append("\n");
 
-        ArrayList<String> sortedCored = state.cored;
+        List<String> sortedCored = state.cored;
         if(sortedCored != null) {
             if (sortedCored.contains(state.owner)) {
                 sortedCored.remove(state.owner);
@@ -76,81 +77,82 @@ public class WritingScripts {
                 Collections.sort(sortedCored);
             }
             for (String core : sortedCored) {
-                concat += "\t\tadd_core_of = " + core + "\n";
+                concat.append("\t\tadd_core_of = ").append(core).append("\n");
             }
         }
         HashMap<Integer, Integer> vps = state.vps;
-        Integer keys[] = new Integer[vps.size()];
+        Integer[] keys = new Integer[vps.size()];
         keys = vps.keySet().toArray(keys);
         Arrays.sort(keys);
         for(int vp : keys) {
-            concat += "\t\t" +  "victory_points = { " + vp + " " + vps.get(vp) + " }\n";
+            concat.append("\t\t" + "victory_points = { ").append(vp).append(" ").append(vps.get(vp)).append(" }\n");
         }
-        concat += "\t\tbuildings = {\n";
+        concat.append("\t\tbuildings = {\n");
         if(state.inf > 0) {
-            concat += "\t\t\tinfrastructure = " + state.inf + "\n";
+            concat.append("\t\t\tinfrastructure = ").append(state.inf).append("\n");
         }
         if(state.civs > 0) {
-            concat += "\t\t\tindustrial_complex = " + state.civs + "\n";
+            concat.append("\t\t\tindustrial_complex = ").append(state.civs).append("\n");
         }
         if(state.mils > 0) {
-            concat += "\t\t\tarms_factory = " + state.mils + "\n";
+            concat.append("\t\t\tarms_factory = ").append(state.mils).append("\n");
         }
         if(state.dockyards > 0) {
-            concat += "\t\t\tdockyard = " + state.dockyards + "\n";
+            concat.append("\t\t\tdockyard = ").append(state.dockyards).append("\n");
         }
         if(state.airfields > 0) {
-            concat += "\t\t\tair_base = " + state.airfields + "\n";
+            concat.append("\t\t\tair_base = ").append(state.airfields).append("\n");
         }
         if(state.refineries > 0) {
-            concat += "\t\t\tsynthetic_refinery = " + state.refineries + "\n";
+            concat.append("\t\t\tsynthetic_refinery = ").append(state.refineries).append("\n");
         }
         if(state.silos > 0) {
-            concat += "\t\t\tfuel_silo = " + state.silos + "\n";
+            concat.append("\t\t\tfuel_silo = ").append(state.silos).append("\n");
         }
         if(state.antiairs > 0) {
-            concat += "\t\t\tanti_air_building = " + state.antiairs + "\n";
+            concat.append("\t\t\tanti_air_building = ").append(state.antiairs).append("\n");
         }
         if(state.reactors > 0) {
-            concat += "\t\t\tnuclear_reactor = " + state.reactors + "\n";
+            concat.append("\t\t\tnuclear_reactor = ").append(state.reactors).append("\n");
         }
         if(state.radars > 0) {
-            concat += "\t\t\tradar_station = " + state.radars + "\n";
+            concat.append("\t\t\tradar_station = ").append(state.radars).append("\n");
         }
         if(state.rocketsites > 0) {
-            concat += "\t\t\trocket_site = " + state.rocketsites + "\n";
+            concat.append("\t\t\trocket_site = ").append(state.rocketsites).append("\n");
         }
         for(ProvinceBuildings pb : state.pbuilds) {
-            concat += "\t\t\t" + pb.province + " = {\n";
+            concat.append("\t\t\t").append(pb.province).append(" = {\n");
             if(pb.forts > 0) {
-                concat += "\t\t\t\t" + "bunker = " + pb.forts +"\n";
+                concat.append("\t\t\t\t" + "bunker = ").append(pb.forts).append("\n");
             }
             if(pb.bunkers > 0) {
-                concat += "\t\t\t\t" + "coastal_bunker = " + pb.bunkers +"\n";
+                concat.append("\t\t\t\t" + "coastal_bunker = ").append(pb.bunkers).append("\n");
             }
             if(pb.bases > 0) {
-                concat += "\t\t\t\t" + "naval_base = " + pb.bases +"\n";
+                concat.append("\t\t\t\t" + "naval_base = ").append(pb.bases).append("\n");
             }
-            concat += "\t\t\t" + "}\n";
+            concat.append("\t\t\t" + "}\n");
 
         }
-        concat += "\t\t" + "}\n";
-        concat += "\t}\n";
-        concat += "\tprovinces = {\n";
+        concat.append("\t\t" + "}\n");
+        concat.append("\t}\n");
+        concat.append("\tprovinces = {\n");
 
         boolean first = true;
         for(int province : state.provinces) {
             if(first) {
-                concat += "\t\t";
+                concat.append("\t\t");
                 first = false;
             } else {
-                concat += " ";
+                concat.append(" ");
             }
-            concat += province;
+            concat.append(province);
         }
-        concat+= "\n\t}\n";
-        concat += "}";
-        setFileContents(file, concat);
+        concat.append("\n\t}\n");
+        concat.append("\tlocal_supplies = ").append(state.supplies).append(".0").append("\n");
+        concat.append("}");
+        setFileContents(file, concat.toString());
     }
 
     public static void writeInLabel(File file, String label, String line) {

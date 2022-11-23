@@ -41,7 +41,36 @@ public class HubPaint {
         return states;
     }
 
+    public static void diffcheck(String path1, String path2) {
+        File file1 = FileScripts.getFile(path1);
+        File file2 = FileScripts.getFile(path2);
 
+        BufferedImage img1;
+        BufferedImage img2;
+        try {
+            img1 = ImageIO.read(file1);
+            img2 = ImageIO.read(file2);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        for (int x = 0; x < img1.getWidth(); x++) {
+            for (int y = 0; y < img1.getHeight(); y++) {
+                int clr1 = img1.getRGB(x, y);
+                int clr2 = img2.getRGB(x, y);
+
+                img1.setRGB(x, y, clr1 == clr2 ? Color.BLACK.getRGB() : Color.PINK.getRGB());
+            }
+        }
+
+        File output = new File("outputdiff.png");
+        try {
+            ImageIO.write(img1, "png", output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void outputStateMap() {
         ArrayList<State> states = loadStatesFromDirectory(Paths.DIV_STATES);

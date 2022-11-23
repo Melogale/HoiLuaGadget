@@ -1,6 +1,7 @@
 package sg;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 public class FileScripts {
@@ -63,23 +64,18 @@ public class FileScripts {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = null;
             StringBuilder stringBuilder = new StringBuilder();
-            try {
-                while((line = reader.readLine()) != null) {
-                    if(line.contains("#")) {
-                        line = ParsingScripts.beforeWord(line, "#");
-                    }
-                    line = line.replace("\r", "");
-                    if(line != "") {
-                        stringBuilder.append(line);
-                        stringBuilder.append("\n");
-                    }
+            while((line = reader.readLine()) != null) {
+                if(line.contains("#")) {
+                    line = ParsingScripts.beforeWord(line, "#");
                 }
-                return stringBuilder.toString();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                reader.close();
+                line = line.replace("\r", "");
+                if(line != "") {
+                    stringBuilder.append(line);
+                    stringBuilder.append("\n");
+                }
             }
+            return stringBuilder.toString();
+
         } catch(FileNotFoundException f) {
             System.out.println(file.getName() + " not found.");
         } catch(IOException e) {
@@ -92,19 +88,12 @@ public class FileScripts {
      * Copy contents from one existing file to another.
      */
     public static void copyFileUsingStream(File source, File dest) throws IOException {
-        InputStream is = null;
-        OutputStream os = null;
-        try {
-            is = new FileInputStream(source);
-            os = new FileOutputStream(dest);
+        try (InputStream is = Files.newInputStream(source.toPath()); OutputStream os = Files.newOutputStream(dest.toPath())) {
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {
                 os.write(buffer, 0, length);
             }
-        } finally {
-            is.close();
-            os.close();
         }
     }
 
@@ -129,9 +118,9 @@ public class FileScripts {
     public static void replace(File file, String oldLine, String newLine) {
         try {
             Scanner sc = new Scanner(file);
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             while (sc.hasNextLine()) {
-                buffer.append(sc.nextLine() + System.lineSeparator());
+                buffer.append(sc.nextLine()).append(System.lineSeparator());
             }
             String fileContents = buffer.toString();
             sc.close();
